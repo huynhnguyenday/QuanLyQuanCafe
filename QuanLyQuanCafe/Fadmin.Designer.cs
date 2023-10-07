@@ -814,6 +814,7 @@
             this.dtgvAccount.RowTemplate.Height = 24;
             this.dtgvAccount.Size = new System.Drawing.Size(418, 386);
             this.dtgvAccount.TabIndex = 11;
+            this.dtgvAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAccount_CellContentClick);
             // 
             // panel20
             // 
