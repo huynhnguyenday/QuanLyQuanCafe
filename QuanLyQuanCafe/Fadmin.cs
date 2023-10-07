@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyQuanCafe.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace QuanLyQuanCafe
         {
             InitializeComponent();
 
+            LoadAccountList(); //Kết nối tới sql database
         }
 
         private void Fadmin_Load(object sender, EventArgs e)
@@ -66,23 +68,15 @@ namespace QuanLyQuanCafe
 
         private void dtgvAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string connectionSTR = "Data Source=LAPTOP-MJQ34NOI\\HUYNH;Initial Catalog=QuanLyQuanCafe;Integrated Security=True"; //chuỗi để xác định chỗ lấy dữ liệu
-            SqlConnection connection = new SqlConnection(connectionSTR); //kết nối client tới server
+            
+        }
 
-            string query = " select * from dbo.Account";
+        void LoadAccountList()
+        {
+            string query = " select DisplayName as [Tên hiển thị] from dbo.Account"; //chạy query trong sql
 
-            connection.Open();
-
-            SqlCommand command = new SqlCommand(query, connection); // câu truy vấn để lấy dữ liệu
-
-            DataTable data = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(command); //trung gian lấy dữ liệu
-
-            adapter.Fill(data);
-
-            connection.Close();
-
-            dtgvAccount.DataSource = data;
+            DataProvider provider = new DataProvider();
+            dtgvAccount.DataSource = provider.ExcuteQuery(query);
         }
     }
 }
