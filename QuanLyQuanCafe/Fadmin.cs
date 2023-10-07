@@ -68,15 +68,22 @@ namespace QuanLyQuanCafe
 
         private void dtgvAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+        }
+
+        void LoadFoodList()
+        {
+            string query = "select * from Food"; //chạy query trong sql
+
+            dtgvFood.DataSource = DataProvider.Instance.ExcuteQuery(query);
         }
 
         void LoadAccountList()
         {
-            string query = " select DisplayName as [Tên hiển thị] from dbo.Account"; //chạy query trong sql
+            string query = " EXEC dbo.USP_GetAccountByUserName @UserName"; //chạy query trong sql
 
-            DataProvider provider = new DataProvider();
-            dtgvAccount.DataSource = provider.ExcuteQuery(query);
+            dtgvAccount.DataSource = DataProvider.Instance.ExcuteQuery(query, new object[] {"admin"});
         }
     }
 }
+    

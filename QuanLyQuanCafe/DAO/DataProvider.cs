@@ -10,9 +10,21 @@ namespace QuanLyQuanCafe.DAO
 {
     public class DataProvider
     {
-        private string connectionSTR = "Data Source=.\\sqlexpress;Initial Catalog=QuanLyQuanCafe;Integrated Security=True"; //chuỗi để xác định chỗ lấy dữ liệu
+        private static DataProvider instance;
+        public static DataProvider Instance 
+        { 
+            get { if (instance == null) instance = new DataProvider(); return DataProvider.instance;  }
+            private set { DataProvider.instance = value; } 
+        }
 
-        public DataTable ExcuteQuery(string query)
+        private DataProvider()
+        {
+            
+        }
+
+        private string connectionSTR = "Data Source=LAPTOP-MJQ34NOI\\HUYNH;Initial Catalog=QuanLyQuanCafe;Integrated Security=True"; //chuỗi để xác định chỗ lấy dữ liệu
+
+        public DataTable ExcuteQuery(string query, object[] parameter)
         {
             DataTable data = new DataTable();
             using (SqlConnection connection = new SqlConnection(connectionSTR))//kết nối client tới server, using là giải phóng bộ nhớ
@@ -21,6 +33,22 @@ namespace QuanLyQuanCafe.DAO
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection); // câu truy vấn để lấy dữ liệu từ query
+
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains("@"))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+
+                }
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command); //trung gian lấy dữ liệu
 
@@ -32,5 +60,76 @@ namespace QuanLyQuanCafe.DAO
 
             return data;
         }
+
+        public int ExcuteNonQuery(string query, object[] parameter)
+        {
+            int data = 0;
+            using (SqlConnection connection = new SqlConnection(connectionSTR))//kết nối client tới server, using là giải phóng bộ nhớ
+            {
+
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection); // câu truy vấn để lấy dữ liệu từ query
+
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains("@"))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+
+                }
+                data = command.ExecuteNonQuery();
+
+                connection.Close();
+
+            }
+
+            return data;
+        }
+
+        public object ExcuteScalar(string query, object[] parameter)
+        {
+            Object data = 0;
+            using (SqlConnection connection = new SqlConnection(connectionSTR))//kết nối client tới server, using là giải phóng bộ nhớ
+            {
+
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection); // câu truy vấn để lấy dữ liệu từ query
+
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains("@"))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+
+                }
+
+                data = command.ExecuteScalar(); // thực hiện truy xuất trên query và trả về ô đầu tiên trên bảng kết quả
+
+                connection.Close();
+
+            }
+
+            return data;
+        }
+
+        
     }
 }
