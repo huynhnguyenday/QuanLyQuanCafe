@@ -18,7 +18,6 @@ namespace QuanLyQuanCafe
         {
             InitializeComponent();
 
-            LoadAccountList(); //Kết nối tới sql database
         }
 
         private void Fadmin_Load(object sender, EventArgs e)
@@ -71,19 +70,6 @@ namespace QuanLyQuanCafe
 
         }
 
-        void LoadFoodList()
-        {
-            string query = "select * from Food"; //chạy query trong sql
-
-            dtgvFood.DataSource = DataProvider.Instance.ExcuteQuery(query);
-        }
-
-        void LoadAccountList()
-        {
-            string query = " EXEC dbo.USP_GetAccountByUserName @UserName"; //chạy query trong sql
-
-            dtgvAccount.DataSource = DataProvider.Instance.ExcuteQuery(query, new object[] {"admin"});
-        }
     }
 }
     
