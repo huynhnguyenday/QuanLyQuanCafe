@@ -21,10 +21,10 @@ namespace QuanLyQuanCafe.DAO
 
         public bool Login(string username, string password)
         {
-            string query = "SELECT * FROM dbo.Account WHERE userName = N'" + username + "' AND password = N'" + password + "' ";
+            string query = "USP_Login @userName , @passWord ";
             object[] parameters = { username, password };
 
-            DataTable result = DataProvider.Instance.ExcuteQuery(query, parameters);
+            DataTable result = DataProvider.Instance.ExcuteQuery(query, new object[] {username, password});
 
             return result.Rows.Count > 0; // Kiểm tra xem có dòng dữ liệu trả về hay không.
         }
