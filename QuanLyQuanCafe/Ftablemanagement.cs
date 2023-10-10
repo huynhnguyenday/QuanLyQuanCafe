@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyQuanCafe.DAO;
+using QuanLyQuanCafe.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +17,36 @@ namespace QuanLyQuanCafe
         public Ftablemanagement()
         {
             InitializeComponent();
-        }
 
+            LoadTable();
+        }
+        #region Method
+
+        void LoadTable()
+        {
+            List<Table> tableList = TableDAO.Instance.LoadTableList(); //Lấy danh sách table
+
+            foreach (Table item in tableList)
+            {
+                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight};
+                btn.Text = item.Name + Environment.NewLine + item.Status1; //Hiển thị chữ
+
+                switch (item.Status1)
+                {
+                    case "Trống":
+                        btn.BackColor = Color.Silver;
+                        break;
+                    default:
+                        btn.BackColor = Color.Orange;
+                        break;
+                }
+
+                flpTable.Controls.Add(btn);
+            }
+        }
+        #endregion
+
+        #region Events
         private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -58,5 +88,6 @@ namespace QuanLyQuanCafe
             Fadmin f = new Fadmin();
             f.ShowDialog();
         }
+        #endregion
     }
 }

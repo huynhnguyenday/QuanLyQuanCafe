@@ -22,9 +22,9 @@ namespace QuanLyQuanCafe.DAO
             
         }
 
-        private string connectionSTR = "Data Source=LAPTOP-MJQ34NOI\\HUYNH;Initial Catalog=QuanLyQuanCafe;Integrated Security=True"; //chuỗi để xác định chỗ lấy dữ liệu
+        private string connectionSTR = "Data Source=LAPTOP-3VKE49FM\\SQLEXPRESS;Initial Catalog=QuanLyQuanCafe;Integrated Security=True"; //chuỗi để xác định chỗ lấy dữ liệu
 
-        public DataTable ExcuteQuery(string query, object[] parameter)
+        public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
             using (SqlConnection connection = new SqlConnection(connectionSTR))//kết nối client tới server, using là giải phóng bộ nhớ
@@ -129,7 +129,5 @@ namespace QuanLyQuanCafe.DAO
 
             return data;
         }
-
-        
     }
 }

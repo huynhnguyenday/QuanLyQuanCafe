@@ -110,7 +110,7 @@
             // 
             this.panel2.Controls.Add(this.lsvBill);
             this.panel2.Location = new System.Drawing.Point(444, 122);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(394, 265);
             this.panel2.TabIndex = 3;
@@ -120,7 +120,7 @@
             this.lsvBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsvBill.HideSelection = false;
             this.lsvBill.Location = new System.Drawing.Point(0, 0);
-            this.lsvBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsvBill.Margin = new System.Windows.Forms.Padding(2);
             this.lsvBill.Name = "lsvBill";
             this.lsvBill.Size = new System.Drawing.Size(394, 265);
             this.lsvBill.TabIndex = 0;
@@ -134,7 +134,7 @@
             this.panel3.Controls.Add(this.btnDisCount);
             this.panel3.Controls.Add(this.btnCheckOut);
             this.panel3.Location = new System.Drawing.Point(444, 392);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(394, 90);
             this.panel3.TabIndex = 4;
@@ -143,7 +143,7 @@
             // 
             this.btnSwtichTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSwtichTable.Location = new System.Drawing.Point(3, 35);
-            this.btnSwtichTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSwtichTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnSwtichTable.Name = "btnSwtichTable";
             this.btnSwtichTable.Size = new System.Drawing.Size(158, 44);
             this.btnSwtichTable.TabIndex = 5;
@@ -154,7 +154,7 @@
             // 
             this.cbSwtichTable.FormattingEnabled = true;
             this.cbSwtichTable.Location = new System.Drawing.Point(2, 10);
-            this.cbSwtichTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSwtichTable.Margin = new System.Windows.Forms.Padding(2);
             this.cbSwtichTable.Name = "cbSwtichTable";
             this.cbSwtichTable.Size = new System.Drawing.Size(159, 21);
             this.cbSwtichTable.TabIndex = 4;
@@ -162,7 +162,7 @@
             // nmDisCount
             // 
             this.nmDisCount.Location = new System.Drawing.Point(176, 11);
-            this.nmDisCount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nmDisCount.Margin = new System.Windows.Forms.Padding(2);
             this.nmDisCount.Name = "nmDisCount";
             this.nmDisCount.Size = new System.Drawing.Size(112, 20);
             this.nmDisCount.TabIndex = 4;
@@ -178,7 +178,7 @@
             // 
             this.btnDisCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDisCount.Location = new System.Drawing.Point(165, 35);
-            this.btnDisCount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDisCount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDisCount.Name = "btnDisCount";
             this.btnDisCount.Size = new System.Drawing.Size(123, 44);
             this.btnDisCount.TabIndex = 1;
@@ -189,7 +189,7 @@
             // 
             this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.Location = new System.Drawing.Point(292, 11);
-            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(100, 68);
             this.btnCheckOut.TabIndex = 0;
@@ -203,7 +203,7 @@
             this.panel4.Controls.Add(this.cbFood);
             this.panel4.Controls.Add(this.cbCategory);
             this.panel4.Location = new System.Drawing.Point(444, 25);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(394, 84);
             this.panel4.TabIndex = 5;
@@ -212,7 +212,7 @@
             // nmFoodCount
             // 
             this.nmFoodCount.Location = new System.Drawing.Point(218, 37);
-            this.nmFoodCount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nmFoodCount.Margin = new System.Windows.Forms.Padding(2);
             this.nmFoodCount.Minimum = new decimal(new int[] {
             100,
             0,
@@ -232,7 +232,7 @@
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(292, 0);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 81);
             this.btnAdd.TabIndex = 2;
@@ -244,7 +244,7 @@
             // 
             this.cbFood.FormattingEnabled = true;
             this.cbFood.Location = new System.Drawing.Point(2, 53);
-            this.cbFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFood.Margin = new System.Windows.Forms.Padding(2);
             this.cbFood.Name = "cbFood";
             this.cbFood.Size = new System.Drawing.Size(201, 21);
             this.cbFood.TabIndex = 1;
@@ -254,15 +254,16 @@
             // 
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(2, 17);
-            this.cbCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(201, 21);
             this.cbCategory.TabIndex = 0;
             // 
             // flpTable
             // 
+            this.flpTable.AutoScroll = true;
             this.flpTable.Location = new System.Drawing.Point(9, 28);
-            this.flpTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpTable.Margin = new System.Windows.Forms.Padding(2);
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(430, 454);
             this.flpTable.TabIndex = 6;
@@ -278,7 +279,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ftablemanagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý quán Cafe";

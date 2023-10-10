@@ -24,7 +24,7 @@ namespace QuanLyQuanCafe.DAO
             string query = "USP_Login @userName , @passWord ";
             object[] parameters = { username, password };
 
-            DataTable result = DataProvider.Instance.ExcuteQuery(query, new object[] {username, password});
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {username, password});
 
             return result.Rows.Count > 0; // Kiểm tra xem có dòng dữ liệu trả về hay không.
         }
