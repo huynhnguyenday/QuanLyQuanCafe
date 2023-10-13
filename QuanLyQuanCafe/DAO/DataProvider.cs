@@ -61,7 +61,7 @@ namespace QuanLyQuanCafe.DAO
             return data;
         }
 
-        public int ExcuteNonQuery(string query, object[] parameter)
+        public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
             using (SqlConnection connection = new SqlConnection(connectionSTR))//kết nối client tới server, using là giải phóng bộ nhớ
@@ -95,7 +95,7 @@ namespace QuanLyQuanCafe.DAO
             return data;
         }
 
-        public object ExcuteScalar(string query, object[] parameter)
+        public object ExecuteScalar(string query, object[] parameter = null)
         {
             Object data = 0;
             using (SqlConnection connection = new SqlConnection(connectionSTR))//kết nối client tới server, using là giải phóng bộ nhớ

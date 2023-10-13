@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Menu = QuanLyQuanCafe.DTO.Menu;
 
 namespace QuanLyQuanCafe
 {
@@ -30,6 +31,8 @@ namespace QuanLyQuanCafe
             {
                 Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight};
                 btn.Text = item.Name + Environment.NewLine + item.Status1; //Hiển thị chữ
+                btn.Click += Btn_Click;
+                btn.Tag = item; //lưu trữ dữ liệu item
 
                 switch (item.Status1)
                 {
@@ -43,6 +46,28 @@ namespace QuanLyQuanCafe
 
                 flpTable.Controls.Add(btn);
             }
+        }
+
+        void ShowBill(int id)
+        {
+            lsvBill.Items.Clear();
+            List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
+
+            foreach (Menu item in listBillInfo) 
+            {
+                ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
+                lsvItem.SubItems.Add(item.Count.ToString());
+                lsvItem.SubItems.Add(item.Price.ToString());
+                lsvItem.SubItems.Add(item.TotalPrice.ToString());
+
+                lsvBill.Items.Add(lsvItem); //add item vào trong bill
+            }
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            int tableID = ((sender as Button).Tag as Table).ID;
+            ShowBill(tableID);
         }
         #endregion
 
