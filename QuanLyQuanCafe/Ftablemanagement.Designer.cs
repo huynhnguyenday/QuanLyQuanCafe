@@ -37,22 +37,24 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.lsvBill = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txbTotalPrice = new System.Windows.Forms.TextBox();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnSwtichTable = new System.Windows.Forms.Button();
             this.cbSwtichTable = new System.Windows.Forms.ComboBox();
             this.nmDisCount = new System.Windows.Forms.NumericUpDown();
             this.btnDisCount = new System.Windows.Forms.Button();
-            this.btnCheckOut = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
             this.btnAdd = new System.Windows.Forms.Button();
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -70,14 +72,15 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(913, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(913, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(57, 21);
             this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
@@ -87,7 +90,7 @@
             this.thôngTinCáNhânToolStripMenuItem,
             this.toolStripMenuItem2});
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(132, 21);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
             // thôngTinCáNhânToolStripMenuItem
@@ -137,23 +140,70 @@
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên món";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Số lượng";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đơn giá";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Thành tiền";
+            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnSwtichTable);
-            this.panel3.Controls.Add(this.cbSwtichTable);
-            this.panel3.Controls.Add(this.nmDisCount);
-            this.panel3.Controls.Add(this.btnDisCount);
+            this.panel3.Controls.Add(this.txbTotalPrice);
+            this.panel3.Controls.Add(this.lblTotalPrice);
             this.panel3.Controls.Add(this.btnCheckOut);
             this.panel3.Location = new System.Drawing.Point(444, 392);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(394, 90);
+            this.panel3.Size = new System.Drawing.Size(394, 102);
             this.panel3.TabIndex = 4;
+            // 
+            // txbTotalPrice
+            // 
+            this.txbTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTotalPrice.Location = new System.Drawing.Point(90, 15);
+            this.txbTotalPrice.Name = "txbTotalPrice";
+            this.txbTotalPrice.ReadOnly = true;
+            this.txbTotalPrice.Size = new System.Drawing.Size(287, 31);
+            this.txbTotalPrice.TabIndex = 2;
+            this.txbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(23, 18);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(61, 25);
+            this.lblTotalPrice.TabIndex = 1;
+            this.lblTotalPrice.Text = "Tổng";
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Location = new System.Drawing.Point(14, 59);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(363, 41);
+            this.btnCheckOut.TabIndex = 0;
+            this.btnCheckOut.Text = "Thanh Toán";
+            this.btnCheckOut.UseVisualStyleBackColor = false;
             // 
             // btnSwtichTable
             // 
             this.btnSwtichTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSwtichTable.Location = new System.Drawing.Point(3, 35);
+            this.btnSwtichTable.Location = new System.Drawing.Point(12, 448);
             this.btnSwtichTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnSwtichTable.Name = "btnSwtichTable";
             this.btnSwtichTable.Size = new System.Drawing.Size(158, 44);
@@ -164,7 +214,7 @@
             // cbSwtichTable
             // 
             this.cbSwtichTable.FormattingEnabled = true;
-            this.cbSwtichTable.Location = new System.Drawing.Point(2, 10);
+            this.cbSwtichTable.Location = new System.Drawing.Point(11, 392);
             this.cbSwtichTable.Margin = new System.Windows.Forms.Padding(2);
             this.cbSwtichTable.Name = "cbSwtichTable";
             this.cbSwtichTable.Size = new System.Drawing.Size(159, 21);
@@ -172,10 +222,10 @@
             // 
             // nmDisCount
             // 
-            this.nmDisCount.Location = new System.Drawing.Point(176, 11);
+            this.nmDisCount.Location = new System.Drawing.Point(225, 393);
             this.nmDisCount.Margin = new System.Windows.Forms.Padding(2);
             this.nmDisCount.Name = "nmDisCount";
-            this.nmDisCount.Size = new System.Drawing.Size(112, 20);
+            this.nmDisCount.Size = new System.Drawing.Size(123, 20);
             this.nmDisCount.TabIndex = 4;
             this.nmDisCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nmDisCount.Value = new decimal(new int[] {
@@ -188,24 +238,13 @@
             // btnDisCount
             // 
             this.btnDisCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisCount.Location = new System.Drawing.Point(165, 35);
+            this.btnDisCount.Location = new System.Drawing.Point(225, 448);
             this.btnDisCount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDisCount.Name = "btnDisCount";
             this.btnDisCount.Size = new System.Drawing.Size(123, 44);
             this.btnDisCount.TabIndex = 1;
             this.btnDisCount.Text = "Giảm giá";
             this.btnDisCount.UseVisualStyleBackColor = true;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.Location = new System.Drawing.Point(292, 11);
-            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(100, 68);
-            this.btnCheckOut.TabIndex = 0;
-            this.btnCheckOut.Text = "Thanh Toán";
-            this.btnCheckOut.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -276,30 +315,18 @@
             this.flpTable.Location = new System.Drawing.Point(9, 28);
             this.flpTable.Margin = new System.Windows.Forms.Padding(2);
             this.flpTable.Name = "flpTable";
-            this.flpTable.Size = new System.Drawing.Size(430, 454);
+            this.flpTable.Size = new System.Drawing.Size(430, 313);
             this.flpTable.TabIndex = 6;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tên món";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Số lượng";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đơn giá";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Thành tiền";
             // 
             // Ftablemanagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 505);
+            this.Controls.Add(this.nmDisCount);
+            this.Controls.Add(this.btnSwtichTable);
+            this.Controls.Add(this.btnDisCount);
+            this.Controls.Add(this.cbSwtichTable);
             this.Controls.Add(this.flpTable);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -314,6 +341,7 @@
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDisCount)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
@@ -348,5 +376,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.TextBox txbTotalPrice;
     }
 }

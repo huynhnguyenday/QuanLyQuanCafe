@@ -25,7 +25,7 @@ namespace QuanLyQuanCafe.DAO
             List<Menu> listMenu = new List<Menu>();
 
 
-            string query = "SELECT f.name, bi.count, f.price, f.price * bi.count as totalPrice FROM dbo.Billinfo as bi, dbo.Bill as b, dbo.Food as f\r\nWhere bi.idbill = b.id AND bi.idfood = f.id AND b.idtable = " + id;
+            string query = "SELECT f.name, bi.count, f.price, f.price * bi.count as totalPrice FROM dbo.Billinfo as bi, dbo.Bill as b, dbo.Food as f Where bi.idbill = b.id AND bi.idfood = f.id AND b.idtable = " + id;
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
 

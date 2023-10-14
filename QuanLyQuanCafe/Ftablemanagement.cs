@@ -52,16 +52,18 @@ namespace QuanLyQuanCafe
         {
             lsvBill.Items.Clear();
             List<Menu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
-
+            float totalPrice = 0;
             foreach (Menu item in listBillInfo) 
             {
                 ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
                 lsvItem.SubItems.Add(item.Count.ToString());
                 lsvItem.SubItems.Add(item.Price.ToString());
                 lsvItem.SubItems.Add(item.TotalPrice.ToString());
-
+                totalPrice += item.Price;
                 lsvBill.Items.Add(lsvItem); //add item vào trong bill
             }
+
+            txbTotalPrice.Text = totalPrice.ToString();
         }
 
         private void Btn_Click(object sender, EventArgs e)
@@ -114,5 +116,10 @@ namespace QuanLyQuanCafe
             f.ShowDialog();
         }
         #endregion
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

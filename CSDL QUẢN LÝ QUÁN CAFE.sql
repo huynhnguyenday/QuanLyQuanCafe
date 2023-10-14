@@ -1,4 +1,4 @@
-﻿REATE DATABASE QuanLyQuanCafe
+﻿CREATE DATABASE QuanLyQuanCafe
 GO
 
 use QuanlyQuanCafe
