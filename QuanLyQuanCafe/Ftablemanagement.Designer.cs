@@ -51,7 +51,7 @@
             this.btnDisCount = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnAddFood = new System.Windows.Forms.Button();
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
@@ -249,7 +249,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.nmFoodCount);
-            this.panel4.Controls.Add(this.btnAdd);
+            this.panel4.Controls.Add(this.btnAddFood);
             this.panel4.Controls.Add(this.cbFood);
             this.panel4.Controls.Add(this.cbCategory);
             this.panel4.Location = new System.Drawing.Point(444, 25);
@@ -278,17 +278,17 @@
             0});
             this.nmFoodCount.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // btnAdd
+            // btnAddFood
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(292, 0);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(102, 81);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Thêm Món";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAddFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFood.Location = new System.Drawing.Point(292, 0);
+            this.btnAddFood.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(102, 81);
+            this.btnAddFood.TabIndex = 2;
+            this.btnAddFood.Text = "Thêm Món";
+            this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // cbFood
             // 
@@ -363,7 +363,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ListView lsvBill;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnAddFood;
         private System.Windows.Forms.ComboBox cbFood;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.NumericUpDown nmFoodCount;

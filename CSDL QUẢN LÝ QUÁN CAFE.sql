@@ -179,11 +179,45 @@ Values (5, 6, 2)
 INSERT dbo.Billinfo
 (idbill, idfood, count)
 Values (6, 5, 2)
+go
 
-SELECT * FROM dbo.Billinfo WHERE idbill = 5
-SELECT f.name, bi.count, f.price, f.price * bi.count as totalPrice FROM dbo.Billinfo as bi, dbo.Bill as b, dbo.Food as f
-Where bi.idbill = b.id AND bi.idfood = f.id AND b.idtable = 184
+CREATE PROC USP_InsertBill
+@idtable INT
+AS
+BEGIN
+	INSERT dbo.Bill
+		( datecheckin, datecheckout, idtable, status)
+	VALUES (GETDATE(), GETDATE(), @idtable, 0)
+END
+GO
 
-SELECT f.name, bi.count, f.price, f.price * bi.count as totalPrice FROM dbo.Billinfo as bi, dbo.Bill as b, dbo.Food as f Where bi.idbill = b.id AND bi.idfood = f.id AND b.status = 0 AND b.idtable = 186
+CREATE PROC USP_InsertBillInfo
+@idBill INT, @idFood INT, @count INT
+AS
+BEGIN
 
-Select * from dbo.FoodCategory
+	DECLARE @isExitsBillInfo INT
+	DECLARE @foodCount INT = 1
+	SELECT @isExitsBillinfo = id, @foodCount = b.count 
+	FROM dbo.Billinfo AS b 
+	WHERE idBill = @idBill AND idFood = @idFood
+
+	IF (@isExitsBillinfo > 0)
+	BEGIN
+		DECLARE @newCount INT = @foodCount + @count
+		IF (@newCount > 0)
+			UPDATE dbo.Billinfo	SET count = @foodCount + @count WHERE idFood = @idFood AND idBill = @idBill
+		ELSE
+			DELETE dbo.Billinfo WHERE idBill = @idBill AND idFood = @idFood
+	END
+	ELSE
+	BEGIN
+		INSERT	dbo.Billinfo
+        ( idBill, idFood, count )
+		VALUES  ( @idBill, -- idBill - int
+          @idFood, -- idFood - int
+          @count  -- count - int
+          )
+	END
+END
+GO

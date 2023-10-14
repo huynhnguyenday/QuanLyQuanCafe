@@ -79,7 +79,7 @@ namespace QuanLyQuanCafe
                 lsvItem.SubItems.Add(item.Count.ToString());
                 lsvItem.SubItems.Add(item.Price.ToString());
                 lsvItem.SubItems.Add(item.TotalPrice.ToString());
-                totalPrice += item.Price;
+                totalPrice += item.TotalPrice;
                 lsvBill.Items.Add(lsvItem); //add item vào trong bill
             }
             CultureInfo culture = new CultureInfo("vi-VN"); //Quuy đổi thành tiền vnd
@@ -89,17 +89,13 @@ namespace QuanLyQuanCafe
         private void Btn_Click(object sender, EventArgs e)
         {
             int tableID = ((sender as Button).Tag as Table).ID;
+            lsvBill.Tag = (sender as Button).Tag;
             ShowBill(tableID);
         }
         #endregion
 
         #region Events
         private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
         {
 
         }
@@ -154,6 +150,25 @@ namespace QuanLyQuanCafe
             id = selected.ID;
 
             LoadFoodListByCategoryID(id);
+        }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;
+
+            int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
+            int foodID = (cbFood.SelectedItem as Food).ID;
+            int count = (int)nmFoodCount.Value;
+
+            if (idBill == -1)
+            {
+                BillDAO.Instance.InsertBill(table.ID);
+                BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxIDBill(), foodID, count);
+            }
+            else
+            {
+                BillInfoDAO.Instance.InsertBillInfo(idBill, foodID, count);
+            }
         }
         #endregion
     }
