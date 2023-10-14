@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +21,27 @@ namespace QuanLyQuanCafe
             InitializeComponent();
 
             LoadTable();
+
+            LoadCategory();
         }
         #region Method
+        void LoadCategory()
+        {
+            List<Category> listCategory = CategoryDAO.Instance.GetListCategory();
+
+            cbCategory.DataSource = listCategory; //load list
+
+            cbCategory.DisplayMember = "Name"; //Hiển thị trường Name
+        }
+
+        void LoadFoodListByCategoryID(int id)
+        {
+            List<Food> listFood = FoodDAO.Instance.GetFoodCategoryID(id);
+
+            cbFood.DataSource = listFood;
+
+            cbFood.DisplayMember = "Name";
+        }
 
         void LoadTable()
         {
@@ -62,8 +82,8 @@ namespace QuanLyQuanCafe
                 totalPrice += item.Price;
                 lsvBill.Items.Add(lsvItem); //add item vào trong bill
             }
-
-            txbTotalPrice.Text = totalPrice.ToString();
+            CultureInfo culture = new CultureInfo("vi-VN"); //Quuy đổi thành tiền vnd
+            txbTotalPrice.Text = totalPrice.ToString("c", culture); //format thành đồng
         }
 
         private void Btn_Click(object sender, EventArgs e)
@@ -99,6 +119,11 @@ namespace QuanLyQuanCafe
 
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -115,11 +140,21 @@ namespace QuanLyQuanCafe
             Fadmin f = new Fadmin();
             f.ShowDialog();
         }
-        #endregion
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int id = 0;
 
+            ComboBox cb = sender as ComboBox;
+
+            if (cb.SelectedItem == null)
+                return;
+
+            Category selected = cb.SelectedItem as Category;
+            id = selected.ID;
+
+            LoadFoodListByCategoryID(id);
         }
+        #endregion
     }
 }

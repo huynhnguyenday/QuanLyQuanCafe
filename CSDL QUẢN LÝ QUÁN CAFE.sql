@@ -184,6 +184,6 @@ SELECT * FROM dbo.Billinfo WHERE idbill = 5
 SELECT f.name, bi.count, f.price, f.price * bi.count as totalPrice FROM dbo.Billinfo as bi, dbo.Bill as b, dbo.Food as f
 Where bi.idbill = b.id AND bi.idfood = f.id AND b.idtable = 184
 
-SELECT * FROM dbo.Bill
-SELECT * From dbo.Billinfo
+SELECT f.name, bi.count, f.price, f.price * bi.count as totalPrice FROM dbo.Billinfo as bi, dbo.Bill as b, dbo.Food as f Where bi.idbill = b.id AND bi.idfood = f.id AND b.status = 0 AND b.idtable = 186
 
+Select * from dbo.FoodCategory
