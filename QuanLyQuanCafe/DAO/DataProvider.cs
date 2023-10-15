@@ -41,7 +41,7 @@ namespace QuanLyQuanCafe.DAO
 
                     foreach (string item in listPara)
                     {
-                        if (item.Contains("@"))
+                        if (item.Contains('@'))
                         {
                             command.Parameters.AddWithValue(item, parameter[i]);
                             i++;
@@ -78,13 +78,13 @@ namespace QuanLyQuanCafe.DAO
 
                     foreach (string item in listPara)
                     {
-                        if (item.Contains("@"))
+                        if (item.Contains('@'))
                         {
                             command.Parameters.AddWithValue(item, parameter[i]);
                             i++;
                         }
                     }
-
+                        
                 }
                 data = command.ExecuteNonQuery();
 
@@ -112,7 +112,7 @@ namespace QuanLyQuanCafe.DAO
 
                     foreach (string item in listPara)
                     {
-                        if (item.Contains("@"))
+                        if (item.Contains('@'))
                         {
                             command.Parameters.AddWithValue(item, parameter[i]);
                             i++;

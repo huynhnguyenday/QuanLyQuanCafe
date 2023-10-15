@@ -21,7 +21,10 @@ namespace QuanLyQuanCafe.DTO
         {
             this.ID = (int)row["id"];
             this.DateCheckin = (DateTime?)row["dateCheckin"];
-            this.DateCheckout = (DateTime?)row["dateCheckout"];
+
+            var dateCheckoutTemp = row["datecheckout"];
+            if (dateCheckoutTemp.ToString() != "")
+                this.DateCheckout = (DateTime?)dateCheckoutTemp;
             this.Status = (int)row["status"];
         }
 

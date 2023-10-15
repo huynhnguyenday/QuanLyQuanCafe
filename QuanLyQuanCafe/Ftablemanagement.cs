@@ -45,6 +45,8 @@ namespace QuanLyQuanCafe
 
         void LoadTable()
         {
+            flpTable.Controls.Clear();
+
             List<Table> tableList = TableDAO.Instance.LoadTableList(); //Lấy danh sách table
 
             foreach (Table item in tableList)
@@ -83,7 +85,7 @@ namespace QuanLyQuanCafe
                 lsvBill.Items.Add(lsvItem); //add item vào trong bill
             }
             CultureInfo culture = new CultureInfo("vi-VN"); //Quuy đổi thành tiền vnd
-            txbTotalPrice.Text = totalPrice.ToString("c", culture); //format thành đồng
+            txbTotalPrice.Text = totalPrice.ToString("c", culture); //format thành đồng  
         }
 
         private void Btn_Click(object sender, EventArgs e)
@@ -168,6 +170,28 @@ namespace QuanLyQuanCafe
             else
             {
                 BillInfoDAO.Instance.InsertBillInfo(idBill, foodID, count);
+            }
+
+            ShowBill(table.ID);
+
+            LoadTable();
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e) //hỏi là muốn thanh toán hay không
+        {
+            Table table = lsvBill.Tag as Table;
+
+            int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
+
+            if (idBill != -1)
+            {
+                if (MessageBox.Show("Bạn muốn thanh toán cho bàn " + table.Name + "?", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) //Nếu nhấn ok, thực hiện điều dưới
+                {
+                    BillDAO.Instance.Checkout(idBill);
+                    ShowBill(table.ID);
+
+                    LoadTable(); //load để đổi từ trống sang có người và ngược lại 
+                }
             }
         }
         #endregion

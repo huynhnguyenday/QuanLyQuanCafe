@@ -199,6 +199,7 @@
             this.btnCheckOut.TabIndex = 0;
             this.btnCheckOut.Text = "Thanh Toán";
             this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // btnSwtichTable
             // 
