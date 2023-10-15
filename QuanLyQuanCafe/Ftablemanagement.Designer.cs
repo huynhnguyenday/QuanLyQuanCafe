@@ -46,7 +46,7 @@
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnSwtichTable = new System.Windows.Forms.Button();
-            this.cbSwtichTable = new System.Windows.Forms.ComboBox();
+            this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.nmDisCount = new System.Windows.Forms.NumericUpDown();
             this.btnDisCount = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -211,15 +211,16 @@
             this.btnSwtichTable.TabIndex = 5;
             this.btnSwtichTable.Text = "Chuyển Bàn";
             this.btnSwtichTable.UseVisualStyleBackColor = true;
+            this.btnSwtichTable.Click += new System.EventHandler(this.btnSwitchTable_Click);
             // 
             // cbSwtichTable
             // 
-            this.cbSwtichTable.FormattingEnabled = true;
-            this.cbSwtichTable.Location = new System.Drawing.Point(11, 392);
-            this.cbSwtichTable.Margin = new System.Windows.Forms.Padding(2);
-            this.cbSwtichTable.Name = "cbSwtichTable";
-            this.cbSwtichTable.Size = new System.Drawing.Size(159, 21);
-            this.cbSwtichTable.TabIndex = 4;
+            this.cbSwitchTable.FormattingEnabled = true;
+            this.cbSwitchTable.Location = new System.Drawing.Point(11, 392);
+            this.cbSwitchTable.Margin = new System.Windows.Forms.Padding(2);
+            this.cbSwitchTable.Name = "cbSwtichTable";
+            this.cbSwitchTable.Size = new System.Drawing.Size(159, 21);
+            this.cbSwitchTable.TabIndex = 4;
             // 
             // nmDisCount
             // 
@@ -328,7 +329,7 @@
             this.Controls.Add(this.nmDisCount);
             this.Controls.Add(this.btnSwtichTable);
             this.Controls.Add(this.btnDisCount);
-            this.Controls.Add(this.cbSwtichTable);
+            this.Controls.Add(this.cbSwitchTable);
             this.Controls.Add(this.flpTable);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -373,7 +374,7 @@
         private System.Windows.Forms.Button btnDisCount;
         private System.Windows.Forms.NumericUpDown nmDisCount;
         private System.Windows.Forms.Button btnSwtichTable;
-        private System.Windows.Forms.ComboBox cbSwtichTable;
+        private System.Windows.Forms.ComboBox cbSwitchTable;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;

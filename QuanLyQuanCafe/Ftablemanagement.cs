@@ -23,6 +23,8 @@ namespace QuanLyQuanCafe
             LoadTable();
 
             LoadCategory();
+
+            LoadComboboxTable(cbSwitchTable);
         }
         #region Method
         void LoadCategory()
@@ -93,6 +95,12 @@ namespace QuanLyQuanCafe
             int tableID = ((sender as Button).Tag as Table).ID;
             lsvBill.Tag = (sender as Button).Tag;
             ShowBill(tableID);
+        }
+
+        void LoadComboboxTable(ComboBox cb)
+        {
+            cb.DataSource = TableDAO.Instance.LoadTableList();
+            cb.DisplayMember = "Name";
         }
         #endregion
 
@@ -184,7 +192,7 @@ namespace QuanLyQuanCafe
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             int discount = (int)nmDisCount.Value;
 
-            Double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split(',')[0]); //lấy mấy số đầu tiên sau dấy phẩy
+            Double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split(',')[0].Replace(".", "")); //lấy mấy số đầu tiên sau dấy phẩy
             Double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
             if (idBill != -1)
             {
@@ -195,6 +203,19 @@ namespace QuanLyQuanCafe
 
                     LoadTable(); //load để đổi từ trống sang có người và ngược lại 
                 }
+            }
+        }
+
+        private void btnSwitchTable_Click(object sender, EventArgs e)
+        {
+
+            int id1 = (lsvBill.Tag as Table).ID;
+
+            int id2 = (cbSwitchTable.SelectedItem as Table).ID;
+            if (MessageBox.Show(string.Format("Bạn có muốn chuyển bàn {0} qua bàn {1}?", (lsvBill.Tag as Table).Name, (cbSwitchTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                TableDAO.Instance.SwitchTable(id1, id2);
+                LoadTable();
             }
         }
         #endregion
