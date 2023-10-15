@@ -182,12 +182,15 @@ namespace QuanLyQuanCafe
             Table table = lsvBill.Tag as Table;
 
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
+            int discount = (int)nmDisCount.Value;
 
+            Double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split(',')[0]); //lấy mấy số đầu tiên sau dấy phẩy
+            Double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
             if (idBill != -1)
             {
-                if (MessageBox.Show("Bạn muốn thanh toán cho bàn " + table.Name + "?", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) //Nếu nhấn ok, thực hiện điều dưới
+                if (MessageBox.Show(string.Format("Bạn muốn thanh toán cho bàn {0}\n Tổng tiền - (Tổng tiền / 100) x Giảm giá \n=> {1} - ({1}/ 100) x {2} = {3}", table.Name, totalPrice, discount, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) //Nếu nhấn ok, thực hiện điều dưới
                 {
-                    BillDAO.Instance.Checkout(idBill);
+                    BillDAO.Instance.Checkout(idBill, discount);
                     ShowBill(table.ID);
 
                     LoadTable(); //load để đổi từ trống sang có người và ngược lại 
