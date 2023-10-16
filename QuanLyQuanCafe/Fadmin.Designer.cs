@@ -157,7 +157,7 @@
             this.tcBill.Controls.Add(this.tpTable);
             this.tcBill.Controls.Add(this.tpAccount);
             this.tcBill.Location = new System.Drawing.Point(10, 10);
-            this.tcBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcBill.Margin = new System.Windows.Forms.Padding(2);
             this.tcBill.Name = "tcBill";
             this.tcBill.SelectedIndex = 0;
             this.tcBill.Size = new System.Drawing.Size(610, 436);
@@ -170,9 +170,9 @@
             this.tpBill.Controls.Add(this.panel2);
             this.tpBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpBill.Location = new System.Drawing.Point(4, 22);
-            this.tpBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpBill.Margin = new System.Windows.Forms.Padding(2);
             this.tpBill.Name = "tpBill";
-            this.tpBill.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpBill.Padding = new System.Windows.Forms.Padding(2);
             this.tpBill.Size = new System.Drawing.Size(602, 410);
             this.tpBill.TabIndex = 0;
             this.tpBill.Text = "Doanh thu";
@@ -182,16 +182,17 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.dtgvBill);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 55);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(590, 353);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // dtgvBill
             // 
+            this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvBill.Location = new System.Drawing.Point(2, 2);
-            this.dtgvBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvBill.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvBill.Name = "dtgvBill";
             this.dtgvBill.RowHeadersWidth = 51;
             this.dtgvBill.RowTemplate.Height = 24;
@@ -204,7 +205,7 @@
             this.panel2.Controls.Add(this.dtpkToDay);
             this.panel2.Controls.Add(this.dtpkFromDay);
             this.panel2.Location = new System.Drawing.Point(8, 5);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(594, 46);
             this.panel2.TabIndex = 2;
@@ -214,18 +215,19 @@
             this.btnViewBill.BackColor = System.Drawing.Color.Transparent;
             this.btnViewBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewBill.Location = new System.Drawing.Point(246, 2);
-            this.btnViewBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewBill.Name = "btnViewBill";
             this.btnViewBill.Size = new System.Drawing.Size(105, 41);
             this.btnViewBill.TabIndex = 2;
             this.btnViewBill.Text = "Thống kê";
             this.btnViewBill.UseVisualStyleBackColor = false;
+            this.btnViewBill.Click += new System.EventHandler(this.btnViewBill_Click);
             // 
             // dtpkToDay
             // 
             this.dtpkToDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpkToDay.Location = new System.Drawing.Point(367, 14);
-            this.dtpkToDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpkToDay.Margin = new System.Windows.Forms.Padding(2);
             this.dtpkToDay.Name = "dtpkToDay";
             this.dtpkToDay.Size = new System.Drawing.Size(226, 20);
             this.dtpkToDay.TabIndex = 1;
@@ -234,7 +236,7 @@
             // 
             this.dtpkFromDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpkFromDay.Location = new System.Drawing.Point(2, 14);
-            this.dtpkFromDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpkFromDay.Margin = new System.Windows.Forms.Padding(2);
             this.dtpkFromDay.Name = "dtpkFromDay";
             this.dtpkFromDay.Size = new System.Drawing.Size(226, 20);
             this.dtpkFromDay.TabIndex = 0;
@@ -247,9 +249,9 @@
             this.tpFood.Controls.Add(this.panel1);
             this.tpFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpFood.Location = new System.Drawing.Point(4, 22);
-            this.tpFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpFood.Margin = new System.Windows.Forms.Padding(2);
             this.tpFood.Name = "tpFood";
-            this.tpFood.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpFood.Padding = new System.Windows.Forms.Padding(2);
             this.tpFood.Size = new System.Drawing.Size(602, 410);
             this.tpFood.TabIndex = 1;
             this.tpFood.Text = "Thức ăn";
@@ -260,7 +262,7 @@
             this.panel5.Controls.Add(this.txbSearchFoodName);
             this.panel5.Controls.Add(this.btnSearchFood);
             this.panel5.Location = new System.Drawing.Point(326, 5);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(274, 81);
             this.panel5.TabIndex = 3;
@@ -269,7 +271,7 @@
             // txbSearchFoodName
             // 
             this.txbSearchFoodName.Location = new System.Drawing.Point(2, 31);
-            this.txbSearchFoodName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSearchFoodName.Margin = new System.Windows.Forms.Padding(2);
             this.txbSearchFoodName.Name = "txbSearchFoodName";
             this.txbSearchFoodName.Size = new System.Drawing.Size(193, 20);
             this.txbSearchFoodName.TabIndex = 5;
@@ -279,7 +281,7 @@
             this.btnSearchFood.BackColor = System.Drawing.Color.Transparent;
             this.btnSearchFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchFood.Location = new System.Drawing.Point(199, 13);
-            this.btnSearchFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchFood.Name = "btnSearchFood";
             this.btnSearchFood.Size = new System.Drawing.Size(74, 54);
             this.btnSearchFood.TabIndex = 4;
@@ -293,7 +295,7 @@
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Location = new System.Drawing.Point(326, 91);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(274, 317);
             this.panel4.TabIndex = 2;
@@ -304,7 +306,7 @@
             this.panel9.Controls.Add(this.nmFoodPrice);
             this.panel9.Controls.Add(this.label4);
             this.panel9.Location = new System.Drawing.Point(4, 149);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(270, 44);
             this.panel9.TabIndex = 3;
@@ -312,7 +314,7 @@
             // nmFoodPrice
             // 
             this.nmFoodPrice.Location = new System.Drawing.Point(100, 11);
-            this.nmFoodPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nmFoodPrice.Margin = new System.Windows.Forms.Padding(2);
             this.nmFoodPrice.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -339,7 +341,7 @@
             this.panel8.Controls.Add(this.cbFoodCategory);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Location = new System.Drawing.Point(4, 100);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(270, 44);
             this.panel8.TabIndex = 3;
@@ -348,7 +350,7 @@
             // 
             this.cbFoodCategory.FormattingEnabled = true;
             this.cbFoodCategory.Location = new System.Drawing.Point(100, 14);
-            this.cbFoodCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFoodCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cbFoodCategory.Name = "cbFoodCategory";
             this.cbFoodCategory.Size = new System.Drawing.Size(169, 21);
             this.cbFoodCategory.TabIndex = 1;
@@ -369,7 +371,7 @@
             this.panel7.Controls.Add(this.txbFoodName);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Location = new System.Drawing.Point(2, 51);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(270, 44);
             this.panel7.TabIndex = 2;
@@ -377,7 +379,7 @@
             // txbFoodName
             // 
             this.txbFoodName.Location = new System.Drawing.Point(101, 11);
-            this.txbFoodName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbFoodName.Margin = new System.Windows.Forms.Padding(2);
             this.txbFoodName.Name = "txbFoodName";
             this.txbFoodName.Size = new System.Drawing.Size(168, 20);
             this.txbFoodName.TabIndex = 1;
@@ -398,7 +400,7 @@
             this.panel6.Controls.Add(this.txtFoodID);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Location = new System.Drawing.Point(2, 2);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(270, 44);
             this.panel6.TabIndex = 1;
@@ -406,7 +408,7 @@
             // txtFoodID
             // 
             this.txtFoodID.Location = new System.Drawing.Point(101, 11);
-            this.txtFoodID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFoodID.Margin = new System.Windows.Forms.Padding(2);
             this.txtFoodID.Name = "txtFoodID";
             this.txtFoodID.ReadOnly = true;
             this.txtFoodID.Size = new System.Drawing.Size(168, 20);
@@ -430,7 +432,7 @@
             this.panel3.Controls.Add(this.btnDeleteFood);
             this.panel3.Controls.Add(this.btnAddFood);
             this.panel3.Location = new System.Drawing.Point(4, 5);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(316, 81);
             this.panel3.TabIndex = 1;
@@ -441,7 +443,7 @@
             this.btnShowFood.BackColor = System.Drawing.Color.Transparent;
             this.btnShowFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowFood.Location = new System.Drawing.Point(241, 13);
-            this.btnShowFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowFood.Name = "btnShowFood";
             this.btnShowFood.Size = new System.Drawing.Size(74, 54);
             this.btnShowFood.TabIndex = 3;
@@ -453,7 +455,7 @@
             this.btnEditFood.BackColor = System.Drawing.Color.Transparent;
             this.btnEditFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditFood.Location = new System.Drawing.Point(163, 13);
-            this.btnEditFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditFood.Name = "btnEditFood";
             this.btnEditFood.Size = new System.Drawing.Size(74, 54);
             this.btnEditFood.TabIndex = 2;
@@ -465,7 +467,7 @@
             this.btnDeleteFood.BackColor = System.Drawing.Color.Transparent;
             this.btnDeleteFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteFood.Location = new System.Drawing.Point(85, 13);
-            this.btnDeleteFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteFood.Name = "btnDeleteFood";
             this.btnDeleteFood.Size = new System.Drawing.Size(74, 54);
             this.btnDeleteFood.TabIndex = 1;
@@ -477,7 +479,7 @@
             this.btnAddFood.BackColor = System.Drawing.Color.Transparent;
             this.btnAddFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFood.Location = new System.Drawing.Point(7, 13);
-            this.btnAddFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(74, 54);
             this.btnAddFood.TabIndex = 0;
@@ -488,7 +490,7 @@
             // 
             this.panel1.Controls.Add(this.dtgvFood);
             this.panel1.Location = new System.Drawing.Point(4, 91);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(316, 317);
             this.panel1.TabIndex = 0;
@@ -497,7 +499,7 @@
             // 
             this.dtgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvFood.Location = new System.Drawing.Point(2, 2);
-            this.dtgvFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvFood.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvFood.Name = "dtgvFood";
             this.dtgvFood.RowHeadersWidth = 51;
             this.dtgvFood.RowTemplate.Height = 24;
@@ -512,9 +514,9 @@
             this.tpFoodCategory.Controls.Add(this.panel16);
             this.tpFoodCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpFoodCategory.Location = new System.Drawing.Point(4, 22);
-            this.tpFoodCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpFoodCategory.Margin = new System.Windows.Forms.Padding(2);
             this.tpFoodCategory.Name = "tpFoodCategory";
-            this.tpFoodCategory.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpFoodCategory.Padding = new System.Windows.Forms.Padding(2);
             this.tpFoodCategory.Size = new System.Drawing.Size(602, 410);
             this.tpFoodCategory.TabIndex = 2;
             this.tpFoodCategory.Text = "Danh mục";
@@ -524,7 +526,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.dtgvCategory);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 92);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(318, 316);
             this.flowLayoutPanel2.TabIndex = 8;
@@ -533,7 +535,7 @@
             // 
             this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvCategory.Location = new System.Drawing.Point(2, 2);
-            this.dtgvCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvCategory.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvCategory.Name = "dtgvCategory";
             this.dtgvCategory.RowHeadersWidth = 51;
             this.dtgvCategory.RowTemplate.Height = 24;
@@ -545,7 +547,7 @@
             this.panel11.Controls.Add(this.panel14);
             this.panel11.Controls.Add(this.panel15);
             this.panel11.Location = new System.Drawing.Point(325, 91);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(274, 317);
             this.panel11.TabIndex = 6;
@@ -556,7 +558,7 @@
             this.panel14.Controls.Add(this.textBox2);
             this.panel14.Controls.Add(this.label7);
             this.panel14.Location = new System.Drawing.Point(2, 51);
-            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(270, 44);
             this.panel14.TabIndex = 2;
@@ -564,7 +566,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(101, 11);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(168, 20);
             this.textBox2.TabIndex = 1;
@@ -585,7 +587,7 @@
             this.panel15.Controls.Add(this.txbCategoryID);
             this.panel15.Controls.Add(this.label8);
             this.panel15.Location = new System.Drawing.Point(2, 2);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(270, 44);
             this.panel15.TabIndex = 1;
@@ -593,7 +595,7 @@
             // txbCategoryID
             // 
             this.txbCategoryID.Location = new System.Drawing.Point(101, 11);
-            this.txbCategoryID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCategoryID.Margin = new System.Windows.Forms.Padding(2);
             this.txbCategoryID.Name = "txbCategoryID";
             this.txbCategoryID.ReadOnly = true;
             this.txbCategoryID.Size = new System.Drawing.Size(168, 20);
@@ -617,7 +619,7 @@
             this.panel16.Controls.Add(this.btnDeleteCategory);
             this.panel16.Controls.Add(this.btnAddCategory);
             this.panel16.Location = new System.Drawing.Point(6, 6);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(316, 81);
             this.panel16.TabIndex = 5;
@@ -627,7 +629,7 @@
             this.btnShowCategory.BackColor = System.Drawing.Color.Transparent;
             this.btnShowCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowCategory.Location = new System.Drawing.Point(241, 13);
-            this.btnShowCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowCategory.Name = "btnShowCategory";
             this.btnShowCategory.Size = new System.Drawing.Size(74, 54);
             this.btnShowCategory.TabIndex = 3;
@@ -639,7 +641,7 @@
             this.btnEditCategory.BackColor = System.Drawing.Color.Transparent;
             this.btnEditCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditCategory.Location = new System.Drawing.Point(163, 13);
-            this.btnEditCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditCategory.Name = "btnEditCategory";
             this.btnEditCategory.Size = new System.Drawing.Size(74, 54);
             this.btnEditCategory.TabIndex = 2;
@@ -651,7 +653,7 @@
             this.btnDeleteCategory.BackColor = System.Drawing.Color.Transparent;
             this.btnDeleteCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteCategory.Location = new System.Drawing.Point(85, 13);
-            this.btnDeleteCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
             this.btnDeleteCategory.Size = new System.Drawing.Size(74, 54);
             this.btnDeleteCategory.TabIndex = 1;
@@ -663,7 +665,7 @@
             this.btnAddCategory.BackColor = System.Drawing.Color.Transparent;
             this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCategory.Location = new System.Drawing.Point(7, 13);
-            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(74, 54);
             this.btnAddCategory.TabIndex = 0;
@@ -676,9 +678,9 @@
             this.tpTable.Controls.Add(this.panel12);
             this.tpTable.Controls.Add(this.panel10);
             this.tpTable.Location = new System.Drawing.Point(4, 22);
-            this.tpTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpTable.Margin = new System.Windows.Forms.Padding(2);
             this.tpTable.Name = "tpTable";
-            this.tpTable.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpTable.Padding = new System.Windows.Forms.Padding(2);
             this.tpTable.Size = new System.Drawing.Size(602, 410);
             this.tpTable.TabIndex = 3;
             this.tpTable.Text = "Bàn ăn";
@@ -688,7 +690,7 @@
             // 
             this.dtgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTable.Location = new System.Drawing.Point(4, 91);
-            this.dtgvTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvTable.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvTable.Name = "dtgvTable";
             this.dtgvTable.RowHeadersWidth = 51;
             this.dtgvTable.RowTemplate.Height = 24;
@@ -701,7 +703,7 @@
             this.panel12.Controls.Add(this.panel13);
             this.panel12.Controls.Add(this.panel17);
             this.panel12.Location = new System.Drawing.Point(326, 91);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(274, 317);
             this.panel12.TabIndex = 7;
@@ -711,7 +713,7 @@
             this.panel18.Controls.Add(this.cbTableStatus);
             this.panel18.Controls.Add(this.label9);
             this.panel18.Location = new System.Drawing.Point(4, 100);
-            this.panel18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel18.Margin = new System.Windows.Forms.Padding(2);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(270, 44);
             this.panel18.TabIndex = 3;
@@ -720,7 +722,7 @@
             // 
             this.cbTableStatus.FormattingEnabled = true;
             this.cbTableStatus.Location = new System.Drawing.Point(99, 10);
-            this.cbTableStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTableStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cbTableStatus.Name = "cbTableStatus";
             this.cbTableStatus.Size = new System.Drawing.Size(170, 21);
             this.cbTableStatus.TabIndex = 1;
@@ -742,7 +744,7 @@
             this.panel13.Controls.Add(this.textBox1);
             this.panel13.Controls.Add(this.label5);
             this.panel13.Location = new System.Drawing.Point(2, 51);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(270, 44);
             this.panel13.TabIndex = 2;
@@ -750,7 +752,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(101, 11);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(168, 20);
             this.textBox1.TabIndex = 1;
@@ -771,7 +773,7 @@
             this.panel17.Controls.Add(this.textBox3);
             this.panel17.Controls.Add(this.label6);
             this.panel17.Location = new System.Drawing.Point(2, 2);
-            this.panel17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel17.Margin = new System.Windows.Forms.Padding(2);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(270, 44);
             this.panel17.TabIndex = 1;
@@ -779,7 +781,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(101, 11);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(168, 20);
@@ -803,7 +805,7 @@
             this.panel10.Controls.Add(this.btnDeleteTable);
             this.panel10.Controls.Add(this.btnAddTable);
             this.panel10.Location = new System.Drawing.Point(4, 5);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(316, 81);
             this.panel10.TabIndex = 6;
@@ -813,7 +815,7 @@
             this.btnShowTable.BackColor = System.Drawing.Color.Transparent;
             this.btnShowTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowTable.Location = new System.Drawing.Point(241, 13);
-            this.btnShowTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowTable.Name = "btnShowTable";
             this.btnShowTable.Size = new System.Drawing.Size(74, 54);
             this.btnShowTable.TabIndex = 3;
@@ -825,7 +827,7 @@
             this.btnEditTable.BackColor = System.Drawing.Color.Transparent;
             this.btnEditTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditTable.Location = new System.Drawing.Point(163, 13);
-            this.btnEditTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditTable.Name = "btnEditTable";
             this.btnEditTable.Size = new System.Drawing.Size(74, 54);
             this.btnEditTable.TabIndex = 2;
@@ -837,7 +839,7 @@
             this.btnDeleteTable.BackColor = System.Drawing.Color.Transparent;
             this.btnDeleteTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteTable.Location = new System.Drawing.Point(85, 13);
-            this.btnDeleteTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteTable.Name = "btnDeleteTable";
             this.btnDeleteTable.Size = new System.Drawing.Size(74, 54);
             this.btnDeleteTable.TabIndex = 1;
@@ -849,7 +851,7 @@
             this.btnAddTable.BackColor = System.Drawing.Color.Transparent;
             this.btnAddTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTable.Location = new System.Drawing.Point(7, 13);
-            this.btnAddTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddTable.Name = "btnAddTable";
             this.btnAddTable.Size = new System.Drawing.Size(74, 54);
             this.btnAddTable.TabIndex = 0;
@@ -862,9 +864,9 @@
             this.tpAccount.Controls.Add(this.panel20);
             this.tpAccount.Controls.Add(this.panel24);
             this.tpAccount.Location = new System.Drawing.Point(4, 22);
-            this.tpAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpAccount.Margin = new System.Windows.Forms.Padding(2);
             this.tpAccount.Name = "tpAccount";
-            this.tpAccount.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpAccount.Padding = new System.Windows.Forms.Padding(2);
             this.tpAccount.Size = new System.Drawing.Size(602, 410);
             this.tpAccount.TabIndex = 4;
             this.tpAccount.Text = "Tài khoản";
@@ -874,7 +876,7 @@
             // 
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvAccount.Location = new System.Drawing.Point(8, 91);
-            this.dtgvAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvAccount.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvAccount.Name = "dtgvAccount";
             this.dtgvAccount.RowHeadersWidth = 51;
             this.dtgvAccount.RowTemplate.Height = 24;
@@ -889,7 +891,7 @@
             this.panel20.Controls.Add(this.panel22);
             this.panel20.Controls.Add(this.panel23);
             this.panel20.Location = new System.Drawing.Point(326, 91);
-            this.panel20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel20.Margin = new System.Windows.Forms.Padding(2);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(274, 317);
             this.panel20.TabIndex = 10;
@@ -899,7 +901,7 @@
             this.btnResetPassword.BackColor = System.Drawing.Color.Transparent;
             this.btnResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetPassword.Location = new System.Drawing.Point(148, 149);
-            this.btnResetPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetPassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(124, 54);
             this.btnResetPassword.TabIndex = 4;
@@ -911,7 +913,7 @@
             this.panel21.Controls.Add(this.cbAccountType);
             this.panel21.Controls.Add(this.label10);
             this.panel21.Location = new System.Drawing.Point(4, 100);
-            this.panel21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel21.Margin = new System.Windows.Forms.Padding(2);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(270, 44);
             this.panel21.TabIndex = 3;
@@ -920,7 +922,7 @@
             // 
             this.cbAccountType.FormattingEnabled = true;
             this.cbAccountType.Location = new System.Drawing.Point(99, 10);
-            this.cbAccountType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbAccountType.Margin = new System.Windows.Forms.Padding(2);
             this.cbAccountType.Name = "cbAccountType";
             this.cbAccountType.Size = new System.Drawing.Size(170, 21);
             this.cbAccountType.TabIndex = 1;
@@ -941,7 +943,7 @@
             this.panel22.Controls.Add(this.txbDisplayName);
             this.panel22.Controls.Add(this.label11);
             this.panel22.Location = new System.Drawing.Point(2, 51);
-            this.panel22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel22.Margin = new System.Windows.Forms.Padding(2);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(270, 44);
             this.panel22.TabIndex = 2;
@@ -949,7 +951,7 @@
             // txbDisplayName
             // 
             this.txbDisplayName.Location = new System.Drawing.Point(101, 11);
-            this.txbDisplayName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbDisplayName.Margin = new System.Windows.Forms.Padding(2);
             this.txbDisplayName.Name = "txbDisplayName";
             this.txbDisplayName.Size = new System.Drawing.Size(168, 20);
             this.txbDisplayName.TabIndex = 1;
@@ -970,7 +972,7 @@
             this.panel23.Controls.Add(this.txbUserName);
             this.panel23.Controls.Add(this.label12);
             this.panel23.Location = new System.Drawing.Point(2, 2);
-            this.panel23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel23.Margin = new System.Windows.Forms.Padding(2);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(270, 44);
             this.panel23.TabIndex = 1;
@@ -978,7 +980,7 @@
             // txbUserName
             // 
             this.txbUserName.Location = new System.Drawing.Point(101, 11);
-            this.txbUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.ReadOnly = true;
             this.txbUserName.Size = new System.Drawing.Size(168, 20);
@@ -1003,7 +1005,7 @@
             this.panel24.Controls.Add(this.btnDeleteAccount);
             this.panel24.Controls.Add(this.btnAddAccount);
             this.panel24.Location = new System.Drawing.Point(4, 5);
-            this.panel24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel24.Margin = new System.Windows.Forms.Padding(2);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(316, 81);
             this.panel24.TabIndex = 9;
@@ -1013,7 +1015,7 @@
             this.btnShowAccount.BackColor = System.Drawing.Color.Transparent;
             this.btnShowAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowAccount.Location = new System.Drawing.Point(241, 13);
-            this.btnShowAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowAccount.Name = "btnShowAccount";
             this.btnShowAccount.Size = new System.Drawing.Size(74, 54);
             this.btnShowAccount.TabIndex = 3;
@@ -1025,7 +1027,7 @@
             this.btnEditAccount.BackColor = System.Drawing.Color.Transparent;
             this.btnEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditAccount.Location = new System.Drawing.Point(163, 13);
-            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(74, 54);
             this.btnEditAccount.TabIndex = 2;
@@ -1037,7 +1039,7 @@
             this.btnDeleteAccount.BackColor = System.Drawing.Color.Transparent;
             this.btnDeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteAccount.Location = new System.Drawing.Point(85, 13);
-            this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(74, 54);
             this.btnDeleteAccount.TabIndex = 1;
@@ -1049,7 +1051,7 @@
             this.btnAddAccount.BackColor = System.Drawing.Color.Transparent;
             this.btnAddAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddAccount.Location = new System.Drawing.Point(7, 13);
-            this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(74, 54);
             this.btnAddAccount.TabIndex = 0;
@@ -1062,7 +1064,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 451);
             this.Controls.Add(this.tcBill);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Fadmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";

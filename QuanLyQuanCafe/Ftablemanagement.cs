@@ -198,7 +198,7 @@ namespace QuanLyQuanCafe
             {
                 if (MessageBox.Show(string.Format("Bạn muốn thanh toán cho bàn {0}\n Tổng tiền - (Tổng tiền / 100) x Giảm giá \n=> {1} - ({1}/ 100) x {2} = {3}", table.Name, totalPrice, discount, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) //Nếu nhấn ok, thực hiện điều dưới
                 {
-                    BillDAO.Instance.Checkout(idBill, discount);
+                    BillDAO.Instance.Checkout(idBill, discount, (float)totalPrice);
                     ShowBill(table.ID);
 
                     LoadTable(); //load để đổi từ trống sang có người và ngược lại 

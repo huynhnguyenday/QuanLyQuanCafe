@@ -19,6 +19,9 @@ namespace QuanLyQuanCafe
         {
             InitializeComponent();
 
+            LoadDateTimePickerBill();
+
+            LoadListBillByDate(dtpkFromDay.Value, dtpkToDay.Value);
         }
 
         private void Fadmin_Load(object sender, EventArgs e)
@@ -71,6 +74,21 @@ namespace QuanLyQuanCafe
 
         }
 
+        void LoadDateTimePickerBill()
+        {
+            DateTime today = DateTime.Now; //trả ngày hôm nay
+            dtpkFromDay.Value = new DateTime(today.Year, today.Month, 1);
+            dtpkToDay.Value = dtpkFromDay.Value.AddMonths(1).AddDays(-1); //lấy đầu tháng sau trừ một ngày ra cuối tháng này
+        }
+
+        void LoadListBillByDate(DateTime checkIn, DateTime checkOut)
+        {
+            dtgvBill.DataSource = BillDAO.Instance.GetBillListByDate(checkIn, checkOut); //Hiển thị lên datagridview
+        }
+        private void btnViewBill_Click(object sender, EventArgs e)
+        {
+            LoadListBillByDate(dtpkFromDay.Value, dtpkToDay.Value);
+        }
     }
 }
     

@@ -298,5 +298,19 @@ BEGIN
 		UPDATE dbo.TableFood SET STATUS = N'Trống' WHERE id = @idTable1
 END
 GO
-	
-UPDATE dbo.TableFood SET status = N'Trống'
+
+ALTER TABLE dbo.Bill ADD totalPrice FLOAT
+
+DELETE dbo.Billinfo
+DELETE dbo.Bill
+go
+
+ALTER PROC USP_GetListBillByDate
+@checkIn date, @checkOut date
+AS
+BEGIN
+	SELECT t.name as [Tên bàn], b.totalPrice as [Tổng tiền], datecheckin as [Ngày vào], datecheckout as [Ngày ra], discount as [Giảm giá]
+	FROM dbo.Bill as b, dbo.TableFood as t
+	WHERE datecheckin >= @checkIn AND datecheckout <= @checkOut AND b.status = 1 AND t.id = b.idtable
+END
+GO
