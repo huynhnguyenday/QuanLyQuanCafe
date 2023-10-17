@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txbUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtPassWord = new System.Windows.Forms.TextBox();
+            this.txbPassWord = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txbDisplayName = new System.Windows.Forms.TextBox();
@@ -41,7 +41,7 @@
             this.txbNewPass = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbReEnterPass = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -54,20 +54,20 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtUserName);
+            this.panel2.Controls.Add(this.txbUserName);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(38, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(405, 59);
             this.panel2.TabIndex = 1;
             // 
-            // txtUserName
+            // txbUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(135, 14);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(250, 22);
-            this.txtUserName.TabIndex = 1;
+            this.txbUserName.Location = new System.Drawing.Point(135, 14);
+            this.txbUserName.Name = "txbUserName";
+            this.txbUserName.ReadOnly = true;
+            this.txbUserName.Size = new System.Drawing.Size(250, 22);
+            this.txbUserName.TabIndex = 1;
             // 
             // label1
             // 
@@ -81,20 +81,20 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txtPassWord);
+            this.panel3.Controls.Add(this.txbPassWord);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(39, 142);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(405, 61);
             this.panel3.TabIndex = 3;
             // 
-            // txtPassWord
+            // txbPassWord
             // 
-            this.txtPassWord.Location = new System.Drawing.Point(135, 17);
-            this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(250, 22);
-            this.txtPassWord.TabIndex = 1;
-            this.txtPassWord.UseSystemPasswordChar = true;
+            this.txbPassWord.Location = new System.Drawing.Point(135, 17);
+            this.txbPassWord.Name = "txbPassWord";
+            this.txbPassWord.Size = new System.Drawing.Size(250, 22);
+            this.txbPassWord.TabIndex = 1;
+            this.txbPassWord.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -162,20 +162,20 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.txbReEnterPass);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(38, 276);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(405, 61);
             this.panel5.TabIndex = 5;
             // 
-            // textBox1
+            // txbReEnterPass
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.txbReEnterPass.Location = new System.Drawing.Point(135, 17);
+            this.txbReEnterPass.Name = "txbReEnterPass";
+            this.txbReEnterPass.Size = new System.Drawing.Size(250, 22);
+            this.txbReEnterPass.TabIndex = 1;
+            this.txbReEnterPass.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -196,6 +196,7 @@
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Cập Nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
@@ -243,10 +244,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txbUserName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtPassWord;
+        private System.Windows.Forms.TextBox txbPassWord;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txbDisplayName;
@@ -255,7 +256,7 @@
         private System.Windows.Forms.TextBox txbNewPass;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbReEnterPass;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnExit;

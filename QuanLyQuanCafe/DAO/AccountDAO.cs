@@ -30,6 +30,13 @@ namespace QuanLyQuanCafe.DAO
             return result.Rows.Count > 0; // Kiểm tra xem có dòng dữ liệu trả về hay không.
         }
 
+        public bool UpdateAccount(string username, string displayname , string pass, string newpass)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @userName , @displayName , @password , @newpassword ", new object[] {username, displayname, pass,newpass});
+
+            return result > 0; // nếu như số dòng được thay đổi mà lớn hơn không là có update thành công
+        }
+
         public Account GetAccountByUserName(string userName)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("Select * from account where userName = '" + userName + "'");

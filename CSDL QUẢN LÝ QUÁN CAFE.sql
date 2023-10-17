@@ -314,3 +314,24 @@ BEGIN
 	WHERE datecheckin >= @checkIn AND datecheckout <= @checkOut AND b.status = 1 AND t.id = b.idtable
 END
 GO
+
+create proc USP_UpdateAccount
+@userName nvarchar(100), @displayName nvarchar(100), @password nvarchar (100), @newpassword nvarchar(100)
+as
+begin
+	declare @isrightpass int = 0
+
+	select @isrightpass = count (*) from dbo.Account where userName = @userName	 and password = @password
+
+	if(@isrightpass = 1)
+	begin
+		if(@password = null or @newpassword = '')
+		begin
+			update dbo.Account set displayname = @displayname where userName = @userName
+		end
+		else
+			update dbo.Account set displayname = @displayname, password = @newpassword where userName = @userName
+	end
+end
+go
+
