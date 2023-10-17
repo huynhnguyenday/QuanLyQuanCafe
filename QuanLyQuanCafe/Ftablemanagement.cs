@@ -16,9 +16,17 @@ namespace QuanLyQuanCafe
 {
     public partial class Ftablemanagement : Form
     {
-        public Ftablemanagement()
+        private Account loginAccount;
+
+        public Account LoginAccount
+        {
+            get { return loginAccount; } set { loginAccount = value; ChangeAccount(loginAccount.Type); }
+        }
+
+        public Ftablemanagement(Account acc)
         {
             InitializeComponent();
+            this.LoginAccount = acc;
 
             LoadTable();
 
@@ -103,6 +111,11 @@ namespace QuanLyQuanCafe
             cb.DisplayMember = "Name";
         }
         #endregion
+
+        void ChangeAccount(int type)
+        {
+            adminToolStripMenuItem.Enabled = type == 1;
+        }
 
         #region Events
         private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
