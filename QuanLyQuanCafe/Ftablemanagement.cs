@@ -16,13 +16,24 @@ namespace QuanLyQuanCafe
 {
     public partial class Ftablemanagement : Form
     {
-        public Ftablemanagement()
+        private Account loginAccount;
+
+        public Account LoginAccount
+        {
+            get { return loginAccount; } 
+            set { loginAccount = value; ChangeAccount(LoginAccount.Type); }
+        }
+
+        public Ftablemanagement(Account acc)
         {
             InitializeComponent();
+
+            this.loginAccount = acc;
 
             LoadTable();
 
             LoadCategory();
+            
         }
         #region Method
         void LoadCategory()
@@ -96,6 +107,12 @@ namespace QuanLyQuanCafe
         }
         #endregion
 
+        void ChangeAccount(int type)
+        {
+            adminToolStripMenuItem.Enabled = type == 1;
+            thôngTinTàiKhoảnToolStripMenuItem.Text += " (" + LoginAccount.DisplayName + ")";
+        }
+
         #region Events
         private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -129,7 +146,7 @@ namespace QuanLyQuanCafe
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Faccountprofile f = new Faccountprofile();
+            Faccountprofile f = new Faccountprofile(LoginAccount);
             f.ShowDialog();
         }
 

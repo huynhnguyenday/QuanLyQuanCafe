@@ -52,7 +52,8 @@ CREATE table Bill
 	datecheckin date not null default getdate(),
 	datecheckout date,
 	idtable int not null,
-	status int not null default 0	--1 là đã thanh toán, 0 là chưa thanh toán 
+	status int not null default 0,	--1 là đã thanh toán, 0 là chưa thanh toán
+	discount int
 
 	foreign key (idtable) references dbo.tablefood(id)
 )
@@ -167,13 +168,13 @@ INSERT dbo.Billinfo
 Values (6, 5, 2)
 go
 
-CREATE PROC USP_InsertBill
+ALTER PROC USP_InsertBill
 @idtable INT
 AS
 BEGIN
 	INSERT dbo.Bill
-		( datecheckin, datecheckout, idtable, status)
-	VALUES (GETDATE(), GETDATE(), @idtable, 0)
+		( datecheckin, datecheckout, idtable, status, discount)
+	VALUES (GETDATE(), NULL, @idtable, 0, 0)
 END
 GO
 
@@ -216,7 +217,7 @@ BEGIN
 	SELECT @idBill = idBill FROM Inserted
 	DECLARE @idTable INT
 	SELECT @idTable = idTable FROM dbo.Bill WHERE id = @idBill AND status = 0
-	UPDATE dbo.TableFood SET status = N'Có người' WHERE id = @idTable
+	--UPDATE dbo.TableFood SET status = N'Có người' WHERE id = @idTable
 END
 GO
 
@@ -238,5 +239,78 @@ BEGIN
 
 	if (@count = 0)
 		UPDATE dbo.TableFood SET status = N'Trống' WHERE id = @idTable
+END
+GO
+
+ALTER TABLE dbo.Bill
+ADD discount INT
+
+UPDATE dbo.Bill SET discount = 0
+go
+
+ALTER PROC USP_SwitchTable
+@idTable1 int, @idTable2 int
+AS
+BEGIN
+
+	DECLARE @idFirstBill int
+	DECLARE @idSecondBill int
+
+	DECLARE @isFirstTableEmpty INT = 1
+	DECLARE @isSecondTableEmpty INT = 1
+
+
+	SELECT @idSecondBill = id FROM dbo.Bill WHERE idTable = @idTable2 AND status = 0
+	SELECT @idFirstBill = id FROM dbo.Bill WHERE idTable = @idTable1 AND status = 0
+
+	IF (@idFirstBill IS NULL)
+	BEGIN
+		INSERT dbo.Bill
+		( datecheckin, datecheckout, idtable, status, discount)
+		VALUES (GETDATE(), NULL, @idtable1, 0, 0)
+		SELECT @idFirstBill = Max(id) FROM dbo.Bill WHERE idTable = @idTable1 AND status = 0
+	END
+
+	SELECT @isFirstTableEmpty = COUNT(*) FROM dbo.Billinfo WHERE idBill = @idFirstBill
+
+	IF (@idSecondBill IS NULL)
+	BEGIN
+		INSERT dbo.Bill
+		( datecheckin, datecheckout, idtable, status, discount)
+		VALUES (GETDATE(), NULL, @idtable2, 0, 0)
+		SELECT @idSecondBill = Max(id) FROM dbo.Bill WHERE idTable = @idTable2 AND status = 0
+		SET @isSecondTableEmpty = 1
+	END
+
+	SELECT @isSecondTableEmpty = COUNT(*) FROM dbo.Billinfo WHERE idBill = @idSecondBill
+
+	SELECT id INTO IDBillInfoTable FROm dbo.Billinfo WHERE idBill = @idSecondBill
+
+	UPDATE dbo.Billinfo SET idBill = @idSecondBill WHERE idBill = @idFirstBill --chuyển billinfo đầu cho t bàn 2
+
+	UPDATE dbo.Billinfo SET idBill = @idFirstBill WHERE id IN (SELECT * FROM IDBillInfoTable) --chuyển billinfo 2 cho cái 1
+
+	DROP TABLE IDBillInfoTable --xóa table
+
+	IF (@isFirstTableEmpty = 0)
+		UPDATE dbo.TableFood SET STATUS = N'Trống' WHERE id = @idTable2
+	IF (@isSecondTableEmpty = 0)
+		UPDATE dbo.TableFood SET STATUS = N'Trống' WHERE id = @idTable1
+END
+GO
+
+ALTER TABLE dbo.Bill ADD totalPrice FLOAT
+
+DELETE dbo.Billinfo
+DELETE dbo.Bill
+go
+
+ALTER PROC USP_GetListBillByDate
+@checkIn date, @checkOut date
+AS
+BEGIN
+	SELECT t.name as [Tên bàn], b.totalPrice as [Tổng tiền], datecheckin as [Ngày vào], datecheckout as [Ngày ra], discount as [Giảm giá]
+	FROM dbo.Bill as b, dbo.TableFood as t
+	WHERE datecheckin >= @checkIn AND datecheckout <= @checkOut AND b.status = 1 AND t.id = b.idtable
 END
 GO
