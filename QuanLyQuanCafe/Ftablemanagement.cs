@@ -26,9 +26,10 @@ namespace QuanLyQuanCafe
         public Ftablemanagement(Account acc)
         {
             InitializeComponent();
-            this.LoginAccount = acc;
-
+            
             LoadTable();
+
+            this.LoginAccount = acc;
 
             LoadCategory();
 
