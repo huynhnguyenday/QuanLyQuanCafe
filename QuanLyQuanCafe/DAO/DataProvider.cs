@@ -22,7 +22,7 @@ namespace QuanLyQuanCafe.DAO
             
         }
 
-        private string connectionSTR = "Data Source=LAPTOP-MJQ34NOI\\HUYNH;Initial Catalog=QuanLyQuanCafe;Integrated Security=True"; //chuỗi để xác định chỗ lấy dữ liệu
+        private string connectionSTR = "Data Source=LAPTOP-3VKE49FM\\SQLEXPRESS;Initial Catalog=QuanLyQuanCafe;Integrated Security=True"; //chuỗi để xác định chỗ lấy dữ liệu
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

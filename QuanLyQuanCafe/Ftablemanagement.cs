@@ -188,6 +188,12 @@ namespace QuanLyQuanCafe
         {
             Table table = lsvBill.Tag as Table;
 
+            if (txbTotalPrice.Text == "") //Kiểm tra chọn bàn chưa
+            {
+                MessageBox.Show("Vui lòng chọn bàn rồi mới chọn món");
+                return;
+            }
+
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             int foodID = (cbFood.SelectedItem as Food).ID;
             int count = (int)nmFoodCount.Value;
@@ -210,6 +216,12 @@ namespace QuanLyQuanCafe
         private void btnCheckOut_Click(object sender, EventArgs e) //hỏi là muốn thanh toán hay không
         {
             Table table = lsvBill.Tag as Table;
+
+            if (txbTotalPrice.Text == "") //Kiểm tra có chọn bàn chưa
+            {
+                MessageBox.Show("Vui lòng chọn bàn và món ăn rồi thanh toán");
+                return;
+            }
 
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             int discount = (int)nmDisCount.Value;
