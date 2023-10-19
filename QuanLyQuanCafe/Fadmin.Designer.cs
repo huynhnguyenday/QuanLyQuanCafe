@@ -51,7 +51,7 @@
             this.txbFoodName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txtFoodID = new System.Windows.Forms.TextBox();
+            this.txbFoodID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnShowFood = new System.Windows.Forms.Button();
@@ -394,7 +394,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.txtFoodID);
+            this.panel6.Controls.Add(this.txbFoodID);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Location = new System.Drawing.Point(3, 2);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -402,14 +402,15 @@
             this.panel6.Size = new System.Drawing.Size(360, 54);
             this.panel6.TabIndex = 1;
             // 
-            // txtFoodID
+            // txbFoodID
             // 
-            this.txtFoodID.Location = new System.Drawing.Point(135, 14);
-            this.txtFoodID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtFoodID.Name = "txtFoodID";
-            this.txtFoodID.ReadOnly = true;
-            this.txtFoodID.Size = new System.Drawing.Size(223, 22);
-            this.txtFoodID.TabIndex = 1;
+            this.txbFoodID.Location = new System.Drawing.Point(135, 14);
+            this.txbFoodID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbFoodID.Name = "txbFoodID";
+            this.txbFoodID.ReadOnly = true;
+            this.txbFoodID.Size = new System.Drawing.Size(223, 22);
+            this.txbFoodID.TabIndex = 1;
+            this.txbFoodID.TextChanged += new System.EventHandler(this.txbFoodID_TextChanged);
             // 
             // label1
             // 
@@ -1138,7 +1139,7 @@
         private System.Windows.Forms.TextBox txbSearchFoodName;
         private System.Windows.Forms.Button btnSearchFood;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox txtFoodID;
+        private System.Windows.Forms.TextBox txbFoodID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txbFoodName;

@@ -22,13 +22,13 @@ namespace QuanLyQuanCafe.DAO
 
         public List<Food> GetFoodCategoryID(int id)
         {
-            List <Food> list = new List<Food>();
+            List<Food> list = new List<Food>();
 
             string query = "Select * from dbo.Food where idcategory = " + id;
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            foreach(DataRow item in data.Rows)
+            foreach (DataRow item in data.Rows)
             {
                 Food food = new Food(item);
                 list.Add(food);
@@ -36,6 +36,8 @@ namespace QuanLyQuanCafe.DAO
 
             return list;
         }
+
+
 
         public List<Food> GetListFood()
         {
