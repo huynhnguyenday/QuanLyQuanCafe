@@ -213,12 +213,12 @@
             this.btnSwtichTable.UseVisualStyleBackColor = true;
             this.btnSwtichTable.Click += new System.EventHandler(this.btnSwitchTable_Click);
             // 
-            // cbSwtichTable
+            // cbSwitchTable
             // 
             this.cbSwitchTable.FormattingEnabled = true;
             this.cbSwitchTable.Location = new System.Drawing.Point(11, 392);
             this.cbSwitchTable.Margin = new System.Windows.Forms.Padding(2);
-            this.cbSwitchTable.Name = "cbSwtichTable";
+            this.cbSwitchTable.Name = "cbSwitchTable";
             this.cbSwitchTable.Size = new System.Drawing.Size(159, 21);
             this.cbSwitchTable.TabIndex = 4;
             // 
