@@ -15,7 +15,7 @@ namespace QuanLyQuanCafe.DAO
             get { if (instance == null) instance = new TableDAO(); return TableDAO.instance; }
             private set { TableDAO.instance = value; }
         }
-        public static int TableWidth = 90;
+        public static int TableWidth = 190;
         public static int TableHeight = 90;
         private TableDAO() { }
 

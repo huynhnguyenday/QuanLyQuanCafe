@@ -166,7 +166,31 @@ namespace QuanLyQuanCafe
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Fadmin f = new Fadmin();
+            f.InsertFood += F_InsertFood;
+            f.DeleteFood += F_DeleteFood;
+            f.UpdateFood += F_UpdateFood;
             f.ShowDialog();
+        }
+
+        private void F_UpdateFood(object sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).ID);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
+        }
+
+        private void F_DeleteFood(object sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).ID);
+            if (lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
+            LoadTable();
+        }
+        private void F_InsertFood(object sender, EventArgs e)
+        {
+            LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).ID);
+            if(lsvBill.Tag != null)
+                ShowBill((lsvBill.Tag as Table).ID);
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)

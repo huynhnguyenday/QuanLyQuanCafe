@@ -56,5 +56,29 @@ namespace QuanLyQuanCafe.DAO
             return list;
         }
 
+        public bool InsertFood(string name, int id, float price)
+        {
+            string query = string.Format("INSERT dbo.Food (name, idcategory, price) VALUES (N'{0}', {1}, {2})", name, id, price);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0; //Trả về 1 nếu thành công
+        }
+
+        public bool UpdateFood(int idFood, string name, int id, float price)
+        {
+            string query = string.Format("UPDATE dbo.Food SET name = N'{0}', idcategory = {1}, price = {2} WHERE id = {3}", name, id, price, idFood);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool DeleteFood(int idFood)
+        {
+            BillInfoDAO.Instance.DeleteBillInfoByFoodID(idFood);
+            string query = string.Format("Delete Food where id = {0}", idFood);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
     }
 }
