@@ -20,6 +20,8 @@ namespace QuanLyQuanCafe
     {
         BindingSource foodList = new BindingSource();
 
+        BindingSource accountList = new BindingSource();
+
         public Fadmin()
         {
             InitializeComponent();
@@ -30,16 +32,19 @@ namespace QuanLyQuanCafe
         void LOAD()
         {
             dtgvFood.DataSource = foodList;
+            dtgvAccount.DataSource = accountList;
 
             LoadDateTimePickerBill();
 
             LoadListBillByDate(dtpkFromDay.Value, dtpkToDay.Value);
             LoadListFood();
-
+            LoadAccount();
             AddFoodBiding();
+            AddAccountBinding();
 
             LoadCategoryIntoCombobox(cbFoodCategory);
         }
+
         #region unused
         private void Fadmin_Load(object sender, EventArgs e)
         {
@@ -108,6 +113,19 @@ namespace QuanLyQuanCafe
             foodList.DataSource = FoodDAO.Instance.GetListFood();
         }
 
+        void AddAccountBinding()
+        {
+            txbUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "UserName", true, DataSourceUpdateMode.Never));
+            txbDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
+            txbAccountType.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
+
+        }
+
+        void LoadAccount()
+        {
+            accountList.DataSource = AccountDAO.Instance.GetListAccount();
+        }
+
         void AddFoodBiding()
         {
             txbFoodName.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "Name", true, DataSourceUpdateMode.Never)); //tránh bị thay đổi giá trị trong lúc thay đổi
@@ -157,9 +175,9 @@ namespace QuanLyQuanCafe
                     cbFoodCategory.SelectedIndex = index;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "Món đó không tồn tại");
+
             }
         }
 
@@ -250,6 +268,11 @@ namespace QuanLyQuanCafe
         private void btnSearchFood_Click(object sender, EventArgs e)
         {
             foodList.DataSource = SearchFoodByName(txbSearchFoodName.Text);
+        }
+
+        private void btnShowAccount_Click(object sender, EventArgs e)
+        {
+            LoadAccount();
         }
     }
 }

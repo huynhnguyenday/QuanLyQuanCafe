@@ -97,7 +97,6 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.cbAccountType = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.txbDisplayName = new System.Windows.Forms.TextBox();
@@ -110,6 +109,7 @@
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
+            this.txbAccountType = new System.Windows.Forms.TextBox();
             this.tcBill.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -916,22 +916,13 @@
             // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.cbAccountType);
+            this.panel21.Controls.Add(this.txbAccountType);
             this.panel21.Controls.Add(this.label10);
             this.panel21.Location = new System.Drawing.Point(4, 100);
             this.panel21.Margin = new System.Windows.Forms.Padding(2);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(270, 44);
             this.panel21.TabIndex = 3;
-            // 
-            // cbAccountType
-            // 
-            this.cbAccountType.FormattingEnabled = true;
-            this.cbAccountType.Location = new System.Drawing.Point(99, 10);
-            this.cbAccountType.Margin = new System.Windows.Forms.Padding(2);
-            this.cbAccountType.Name = "cbAccountType";
-            this.cbAccountType.Size = new System.Drawing.Size(170, 21);
-            this.cbAccountType.TabIndex = 1;
             // 
             // label10
             // 
@@ -1027,6 +1018,7 @@
             this.btnShowAccount.TabIndex = 3;
             this.btnShowAccount.Text = "Xem";
             this.btnShowAccount.UseVisualStyleBackColor = false;
+            this.btnShowAccount.Click += new System.EventHandler(this.btnShowAccount_Click);
             // 
             // btnEditAccount
             // 
@@ -1063,6 +1055,14 @@
             this.btnAddAccount.TabIndex = 0;
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = false;
+            // 
+            // txbAccountType
+            // 
+            this.txbAccountType.Location = new System.Drawing.Point(108, 13);
+            this.txbAccountType.Margin = new System.Windows.Forms.Padding(2);
+            this.txbAccountType.Name = "txbAccountType";
+            this.txbAccountType.Size = new System.Drawing.Size(159, 20);
+            this.txbAccountType.TabIndex = 1;
             // 
             // Fadmin
             // 
@@ -1199,7 +1199,6 @@
         private System.Windows.Forms.DataGridView dtgvAccount;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.ComboBox cbAccountType;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.TextBox txbDisplayName;
@@ -1213,5 +1212,6 @@
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Button btnResetPassword;
+        private System.Windows.Forms.TextBox txbAccountType;
     }
 }

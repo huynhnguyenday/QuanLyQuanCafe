@@ -49,5 +49,9 @@ namespace QuanLyQuanCafe.DAO
             return null;
         }
 
+        public DataTable GetListAccount()
+        {
+            return DataProvider.Instance.ExecuteQuery("Select username, displayname, type from dbo.Account");
+        }
     }
 }
