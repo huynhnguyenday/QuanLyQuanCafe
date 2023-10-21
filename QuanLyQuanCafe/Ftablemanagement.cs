@@ -184,7 +184,7 @@ namespace QuanLyQuanCafe
             LoadFoodListByCategoryID((cbCategory.SelectedItem as Category).ID);
             if (lsvBill.Tag != null)
                 ShowBill((lsvBill.Tag as Table).ID);
-            LoadTable();
+            LoadTable();    
         }
         private void F_InsertFood(object sender, EventArgs e)
         {
