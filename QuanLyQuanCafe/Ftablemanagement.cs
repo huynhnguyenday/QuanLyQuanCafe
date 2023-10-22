@@ -166,6 +166,7 @@ namespace QuanLyQuanCafe
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Fadmin f = new Fadmin();
+            f.loginAccount = loginAccount;
             f.InsertFood += F_InsertFood;
             f.DeleteFood += F_DeleteFood;
             f.UpdateFood += F_UpdateFood;

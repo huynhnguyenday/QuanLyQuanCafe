@@ -230,11 +230,6 @@
             this.nmDisCount.Size = new System.Drawing.Size(123, 20);
             this.nmDisCount.TabIndex = 4;
             this.nmDisCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nmDisCount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nmDisCount.ValueChanged += new System.EventHandler(this.nmDisCount_ValueChanged);
             // 
             // btnDisCount
