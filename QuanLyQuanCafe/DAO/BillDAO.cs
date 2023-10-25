@@ -20,13 +20,8 @@ namespace QuanLyQuanCafe.DAO
 
         private BillDAO() { }
 
-
-        /// <summary>
-        /// Thành công: bill ID
-        /// Thất bại: -1
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        //Thành công: bill ID
+        // Thất bại: -1
         public int GetUncheckBillIDByTableID(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE idtable = " + id + " AND status = 0");

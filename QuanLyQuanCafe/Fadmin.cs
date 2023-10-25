@@ -22,6 +22,8 @@ namespace QuanLyQuanCafe
 
         BindingSource accountList = new BindingSource();
 
+        BindingSource tableList = new BindingSource();
+
         public Account loginAccount;
 
         public Fadmin()

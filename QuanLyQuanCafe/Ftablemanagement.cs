@@ -119,7 +119,7 @@ namespace QuanLyQuanCafe
             thôngTinTàiKhoảnToolStripMenuItem.Text += " (" + LoginAccount.DisplayName + ") ";
         }
 
-        #region Events
+        #region Unused
         private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -144,7 +144,7 @@ namespace QuanLyQuanCafe
         {
 
         }
-
+        #endregion
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -255,7 +255,7 @@ namespace QuanLyQuanCafe
             Double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
             if (idBill != -1)
             {
-                if (MessageBox.Show(string.Format("Bạn muốn thanh toán cho bàn {0}\n Tổng tiền - (Tổng tiền / 100) x Giảm giá \n=> {1} - ({1}/ 100) x {2} = {3}", table.Name, totalPrice, discount, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) //Nếu nhấn ok, thực hiện điều dưới
+                if (MessageBox.Show(string.Format("Bạn muốn thanh toán cho bàn {0}?", table.Name), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) //Nếu nhấn ok, thực hiện điều dưới
                 {
                     BillDAO.Instance.Checkout(idBill, discount, (float)totalPrice);
                     ShowBill(table.ID);
@@ -277,7 +277,6 @@ namespace QuanLyQuanCafe
                 LoadTable();
             }
         }
-        #endregion
 
         private void thanhToánToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -287,6 +286,11 @@ namespace QuanLyQuanCafe
         private void thêmMónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             btnAddFood_Click(this, new EventArgs());
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
