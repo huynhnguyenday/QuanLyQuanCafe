@@ -178,7 +178,7 @@ BEGIN
 END
 GO
 
-CREATE PROC USP_InsertBillInfo
+ALTER PROC USP_InsertBillInfo
 @idBill INT, @idFood INT, @count INT
 AS
 BEGIN

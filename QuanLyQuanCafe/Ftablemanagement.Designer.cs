@@ -52,7 +52,6 @@
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.nmDisCount = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
@@ -61,12 +60,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDeleteFood = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDisCount)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +79,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(988, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(863, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -181,7 +180,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Số lượng";
-            this.columnHeader2.Width = 62;
+            this.columnHeader2.Width = 61;
             // 
             // columnHeader3
             // 
@@ -198,7 +197,7 @@
             this.panel3.Controls.Add(this.txbTotalPrice);
             this.panel3.Controls.Add(this.lblTotalPrice);
             this.panel3.Controls.Add(this.btnCheckOut);
-            this.panel3.Location = new System.Drawing.Point(458, 523);
+            this.panel3.Location = new System.Drawing.Point(458, 469);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(394, 102);
@@ -206,6 +205,7 @@
             // 
             // txbTotalPrice
             // 
+            this.txbTotalPrice.Enabled = false;
             this.txbTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTotalPrice.Location = new System.Drawing.Point(90, 15);
             this.txbTotalPrice.Name = "txbTotalPrice";
@@ -241,12 +241,12 @@
             // btnSwtichTable
             // 
             this.btnSwtichTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSwtichTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSwtichTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSwtichTable.ForeColor = System.Drawing.Color.White;
             this.btnSwtichTable.Location = new System.Drawing.Point(14, 13);
             this.btnSwtichTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnSwtichTable.Name = "btnSwtichTable";
-            this.btnSwtichTable.Size = new System.Drawing.Size(158, 44);
+            this.btnSwtichTable.Size = new System.Drawing.Size(150, 35);
             this.btnSwtichTable.TabIndex = 5;
             this.btnSwtichTable.Text = "Chuyển Bàn";
             this.btnSwtichTable.UseVisualStyleBackColor = false;
@@ -254,21 +254,21 @@
             // 
             // cbSwitchTable
             // 
-            this.cbSwitchTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSwitchTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSwitchTable.FormattingEnabled = true;
-            this.cbSwitchTable.Location = new System.Drawing.Point(193, 25);
+            this.cbSwitchTable.Location = new System.Drawing.Point(186, 17);
             this.cbSwitchTable.Margin = new System.Windows.Forms.Padding(2);
             this.cbSwitchTable.Name = "cbSwitchTable";
-            this.cbSwitchTable.Size = new System.Drawing.Size(159, 26);
+            this.cbSwitchTable.Size = new System.Drawing.Size(159, 30);
             this.cbSwitchTable.TabIndex = 4;
             // 
             // nmDisCount
             // 
-            this.nmDisCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nmDisCount.Location = new System.Drawing.Point(204, 78);
+            this.nmDisCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmDisCount.Location = new System.Drawing.Point(186, 51);
             this.nmDisCount.Margin = new System.Windows.Forms.Padding(2);
             this.nmDisCount.Name = "nmDisCount";
-            this.nmDisCount.Size = new System.Drawing.Size(123, 24);
+            this.nmDisCount.Size = new System.Drawing.Size(123, 31);
             this.nmDisCount.TabIndex = 4;
             this.nmDisCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nmDisCount.ValueChanged += new System.EventHandler(this.nmDisCount_ValueChanged);
@@ -282,36 +282,16 @@
             this.panel4.Location = new System.Drawing.Point(458, 365);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(394, 138);
+            this.panel4.Size = new System.Drawing.Size(394, 89);
             this.panel4.TabIndex = 5;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // nmFoodCount
-            // 
-            this.nmFoodCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nmFoodCount.Location = new System.Drawing.Point(213, 173);
-            this.nmFoodCount.Margin = new System.Windows.Forms.Padding(2);
-            this.nmFoodCount.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.nmFoodCount.Name = "nmFoodCount";
-            this.nmFoodCount.Size = new System.Drawing.Size(70, 31);
-            this.nmFoodCount.TabIndex = 3;
-            this.nmFoodCount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmFoodCount.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // btnAddFood
             // 
             this.btnAddFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnAddFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFood.ForeColor = System.Drawing.Color.White;
-            this.btnAddFood.Location = new System.Drawing.Point(85, 146);
+            this.btnAddFood.Location = new System.Drawing.Point(58, 125);
             this.btnAddFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(102, 81);
@@ -333,12 +313,12 @@
             // 
             // cbCategory
             // 
-            this.cbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(169, 378);
             this.cbCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(201, 28);
+            this.cbCategory.Size = new System.Drawing.Size(201, 30);
             this.cbCategory.TabIndex = 0;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
@@ -354,10 +334,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.69811F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 73);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.33962F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(43, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 33);
+            this.label1.Size = new System.Drawing.Size(121, 31);
             this.label1.TabIndex = 7;
             this.label1.Text = "Giảm giá";
             // 
@@ -375,28 +355,42 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.30189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.30189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(33, 449);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 29);
+            this.label3.Size = new System.Drawing.Size(122, 29);
             this.label3.TabIndex = 7;
             this.label3.Text = "Các món";
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnDeleteFood);
             this.panel1.Controls.Add(this.btnAddFood);
-            this.panel1.Controls.Add(this.nmFoodCount);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(9, 365);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(430, 260);
+            this.panel1.Size = new System.Drawing.Size(430, 206);
             this.panel1.TabIndex = 8;
+            // 
+            // btnDeleteFood
+            // 
+            this.btnDeleteFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDeleteFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteFood.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteFood.Location = new System.Drawing.Point(223, 125);
+            this.btnDeleteFood.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteFood.Name = "btnDeleteFood";
+            this.btnDeleteFood.Size = new System.Drawing.Size(102, 81);
+            this.btnDeleteFood.TabIndex = 2;
+            this.btnDeleteFood.Text = "Xóa món";
+            this.btnDeleteFood.UseVisualStyleBackColor = false;
+            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // Ftablemanagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 727);
+            this.ClientSize = new System.Drawing.Size(863, 580);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbFood);
             this.Controls.Add(this.cbCategory);
@@ -406,8 +400,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Ftablemanagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý quán Cafe";
@@ -419,7 +416,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDisCount)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -442,7 +438,6 @@
         private System.Windows.Forms.Button btnAddFood;
         private System.Windows.Forms.ComboBox cbFood;
         private System.Windows.Forms.ComboBox cbCategory;
-        private System.Windows.Forms.NumericUpDown nmFoodCount;
         private System.Windows.Forms.FlowLayoutPanel flpTable;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.NumericUpDown nmDisCount;
@@ -461,5 +456,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnDeleteFood;
     }
 }

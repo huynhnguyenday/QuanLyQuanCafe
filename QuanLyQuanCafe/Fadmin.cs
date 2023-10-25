@@ -274,11 +274,6 @@ namespace QuanLyQuanCafe
             foodList.DataSource = SearchFoodByName(txbSearchFoodName.Text);
         }
 
-        private void btnShowAccount_Click(object sender, EventArgs e)
-        {
-            LoadAccount();
-        }
-
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
             string userName = txbUserName.Text;

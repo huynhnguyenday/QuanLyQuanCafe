@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using Menu = QuanLyQuanCafe.DTO.Menu;
 
 namespace QuanLyQuanCafe
@@ -66,7 +67,7 @@ namespace QuanLyQuanCafe
                 btn.Text = item.Name + Environment.NewLine + item.Status1; //Hiển thị chữ
                 btn.Click += Btn_Click;
                 btn.Tag = item; //lưu trữ dữ liệu item
-
+          
                 switch (item.Status1)
                 {
                     case "Trống":
@@ -221,16 +222,15 @@ namespace QuanLyQuanCafe
 
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             int foodID = (cbFood.SelectedItem as Food).ID;
-            int count = (int)nmFoodCount.Value;
 
             if (idBill == -1)
             {
                 BillDAO.Instance.InsertBill(table.ID);
-                BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxIDBill(), foodID, count);
+                BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxIDBill(), foodID, 1);
             }
             else
             {
-                BillInfoDAO.Instance.InsertBillInfo(idBill, foodID, count);
+                BillInfoDAO.Instance.InsertBillInfo(idBill, foodID, 1);
             }
 
             ShowBill(table.ID);
@@ -253,11 +253,16 @@ namespace QuanLyQuanCafe
 
             Double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split(',')[0].Replace(".", "")); //lấy mấy số đầu tiên sau dấy phẩy
             Double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
+            if (lsvBill.Items.Count == 0) // Kiểm tra xem trên listbox có thứ gì không
+            {
+                MessageBox.Show("Bạn chưa có chọn món ăn");
+                return;
+            }
             if (idBill != -1)
             {
-                if (MessageBox.Show(string.Format("Bạn muốn thanh toán cho bàn {0}?", table.Name), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) //Nếu nhấn ok, thực hiện điều dưới
+                if (MessageBox.Show(string.Format("Bạn muốn thanh toán cho bàn {0}?\n => Tổng giá tiền: {1}", table.Name, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) //Nếu nhấn ok, thực hiện điều dưới
                 {
-                    BillDAO.Instance.Checkout(idBill, discount, (float)totalPrice);
+                    BillDAO.Instance.Checkout(idBill, discount, (float)finalTotalPrice);
                     ShowBill(table.ID);
 
                     LoadTable(); //load để đổi từ trống sang có người và ngược lại 
@@ -291,6 +296,38 @@ namespace QuanLyQuanCafe
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDeleteFood_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;
+            if (txbTotalPrice.Text == "") //Kiểm tra chọn bàn chưa
+            {
+                MessageBox.Show("Vui lòng chọn bàn rồi mới chọn món");
+                return;
+            }
+
+            int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
+            int foodID = (cbFood.SelectedItem as Food).ID;
+            if (lsvBill.Items.Count == 0) // Kiểm tra xem trên listbox có thứ gì không
+            {
+                MessageBox.Show("Bạn chưa có chọn món ăn");
+                return;
+            }
+
+            if (idBill == -1)
+            {
+                MessageBox.Show("Không tồn tại món đó");
+                return;
+            }
+            else
+            {
+                BillInfoDAO.Instance.InsertBillInfo(idBill, foodID, -1);
+            }
+
+            ShowBill(table.ID);
+
+            LoadTable();
         }
     }
 }

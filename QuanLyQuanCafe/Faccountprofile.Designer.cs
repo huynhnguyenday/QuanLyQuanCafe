@@ -57,7 +57,7 @@
             this.panel2.Controls.Add(this.txbUserName);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(28, 10);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(333, 48);
             this.panel2.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             this.txbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbUserName.Location = new System.Drawing.Point(134, 9);
-            this.txbUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.ReadOnly = true;
             this.txbUserName.Size = new System.Drawing.Size(188, 24);
@@ -88,7 +88,7 @@
             this.panel3.Controls.Add(this.txbPassWord);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(29, 115);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(332, 50);
             this.panel3.TabIndex = 3;
@@ -97,7 +97,7 @@
             // 
             this.txbPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPassWord.Location = new System.Drawing.Point(133, 12);
-            this.txbPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbPassWord.Margin = new System.Windows.Forms.Padding(2);
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.Size = new System.Drawing.Size(188, 24);
             this.txbPassWord.TabIndex = 1;
@@ -119,7 +119,7 @@
             this.panel1.Controls.Add(this.txbDisplayName);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(28, 63);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(333, 48);
             this.panel1.TabIndex = 2;
@@ -128,7 +128,7 @@
             // 
             this.txbDisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbDisplayName.Location = new System.Drawing.Point(134, 9);
-            this.txbDisplayName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbDisplayName.Margin = new System.Windows.Forms.Padding(2);
             this.txbDisplayName.Name = "txbDisplayName";
             this.txbDisplayName.Size = new System.Drawing.Size(188, 24);
             this.txbDisplayName.TabIndex = 1;
@@ -150,7 +150,7 @@
             this.panel4.Controls.Add(this.txbNewPass);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(29, 170);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(332, 50);
             this.panel4.TabIndex = 4;
@@ -159,7 +159,7 @@
             // 
             this.txbNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNewPass.Location = new System.Drawing.Point(133, 12);
-            this.txbNewPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbNewPass.Margin = new System.Windows.Forms.Padding(2);
             this.txbNewPass.Name = "txbNewPass";
             this.txbNewPass.Size = new System.Drawing.Size(188, 24);
             this.txbNewPass.TabIndex = 1;
@@ -181,7 +181,7 @@
             this.panel5.Controls.Add(this.txbReEnterPass);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(28, 224);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(333, 50);
             this.panel5.TabIndex = 5;
@@ -190,7 +190,7 @@
             // 
             this.txbReEnterPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbReEnterPass.Location = new System.Drawing.Point(134, 12);
-            this.txbReEnterPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbReEnterPass.Margin = new System.Windows.Forms.Padding(2);
             this.txbReEnterPass.Name = "txbReEnterPass";
             this.txbReEnterPass.Size = new System.Drawing.Size(188, 24);
             this.txbReEnterPass.TabIndex = 1;
@@ -211,7 +211,7 @@
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(92, 287);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(130, 55);
             this.btnUpdate.TabIndex = 6;
@@ -224,7 +224,7 @@
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(235, 287);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(98, 55);
             this.btnExit.TabIndex = 7;
@@ -246,7 +246,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Faccountprofile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin cá nhân";
