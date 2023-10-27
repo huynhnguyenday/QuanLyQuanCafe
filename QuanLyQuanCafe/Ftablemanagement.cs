@@ -91,12 +91,12 @@ namespace QuanLyQuanCafe
             {
                 ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
                 lsvItem.SubItems.Add(item.Count.ToString());
-                lsvItem.SubItems.Add(item.Price.ToString());
-                lsvItem.SubItems.Add(item.TotalPrice.ToString());
+                lsvItem.SubItems.Add(item.Price.ToString("#,0#"));
+                lsvItem.SubItems.Add(item.TotalPrice.ToString("#,0#"));
                 totalPrice += item.TotalPrice;
                 lsvBill.Items.Add(lsvItem); //add item vào trong bill
             }
-            CultureInfo culture = new CultureInfo("vi-VN"); //Quuy đổi thành tiền vnd
+            CultureInfo culture = new CultureInfo("vi-VN"); //Quy đổi thành tiền vnd
             txbTotalPrice.Text = totalPrice.ToString("c", culture); //format thành đồng  
         }
 
@@ -258,6 +258,7 @@ namespace QuanLyQuanCafe
                 MessageBox.Show("Bạn chưa có chọn món ăn");
                 return;
             }
+
             if (idBill != -1)
             {
                 if (MessageBox.Show(string.Format("Bạn muốn thanh toán cho bàn {0}?\n => Tổng giá tiền: {1}", table.Name, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK) //Nếu nhấn ok, thực hiện điều dưới
@@ -272,10 +273,23 @@ namespace QuanLyQuanCafe
 
         private void btnSwitchTable_Click(object sender, EventArgs e)
         {
-
             int id1 = (lsvBill.Tag as Table).ID;
 
             int id2 = (cbSwitchTable.SelectedItem as Table).ID;
+            int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(id2);
+
+            if (id1 == id2)
+            {
+                MessageBox.Show("Không thể chuyển bàn sang bàn của chính mình");
+                return;
+            }
+
+            if (idBill != -1)
+            {
+                MessageBox.Show("Bàn đã có người, vui lòng chọn bàn khác");
+                return;
+            }
+
             if (MessageBox.Show(string.Format("Bạn có muốn chuyển bàn {0} qua bàn {1}?", (lsvBill.Tag as Table).Name, (cbSwitchTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 TableDAO.Instance.SwitchTable(id1, id2);

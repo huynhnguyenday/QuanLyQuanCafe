@@ -179,9 +179,9 @@ namespace QuanLyQuanCafe
                     cbFoodCategory.SelectedIndex = index;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show("Error occur" + ex.Message);
             }
         }
 
@@ -189,7 +189,7 @@ namespace QuanLyQuanCafe
         {
             string name = txbFoodName.Text;
             int categoryID = (cbFoodCategory.SelectedItem as Category).ID;
-            float price = (float)nmFoodPrice.Value;
+            string price = nmFoodPrice.Value.ToString();
 
             if (FoodDAO.Instance.InsertFood(name, categoryID, price))
             {
@@ -208,7 +208,7 @@ namespace QuanLyQuanCafe
         {
             string name = txbFoodName.Text;
             int categoryID = (cbFoodCategory.SelectedItem as Category).ID;
-            float price = (float)nmFoodPrice.Value;
+            string price = nmFoodPrice.Value.ToString();
             int id = Convert.ToInt32(txbFoodID.Text);
 
             if (FoodDAO.Instance.UpdateFood(id, name, categoryID, price))
@@ -365,6 +365,11 @@ namespace QuanLyQuanCafe
             }
 
             LoadAccount();
+        }
+
+        private void dtpkFromDay_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

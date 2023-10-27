@@ -76,6 +76,8 @@
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
+            this.lblFromDate = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tcBill.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -111,7 +113,7 @@
             this.tcBill.Margin = new System.Windows.Forms.Padding(2);
             this.tcBill.Name = "tcBill";
             this.tcBill.SelectedIndex = 0;
-            this.tcBill.Size = new System.Drawing.Size(767, 436);
+            this.tcBill.Size = new System.Drawing.Size(767, 507);
             this.tcBill.TabIndex = 0;
             this.tcBill.SelectedIndexChanged += new System.EventHandler(this.tcBill_SelectedIndexChanged);
             // 
@@ -124,7 +126,7 @@
             this.tpBill.Margin = new System.Windows.Forms.Padding(2);
             this.tpBill.Name = "tpBill";
             this.tpBill.Padding = new System.Windows.Forms.Padding(2);
-            this.tpBill.Size = new System.Drawing.Size(759, 410);
+            this.tpBill.Size = new System.Drawing.Size(759, 481);
             this.tpBill.TabIndex = 0;
             this.tpBill.Text = "Doanh thu";
             this.tpBill.UseVisualStyleBackColor = true;
@@ -132,10 +134,10 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.dtgvBill);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 55);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 111);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(743, 353);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(749, 353);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // dtgvBill
@@ -147,28 +149,30 @@
             this.dtgvBill.Name = "dtgvBill";
             this.dtgvBill.RowHeadersWidth = 51;
             this.dtgvBill.RowTemplate.Height = 24;
-            this.dtgvBill.Size = new System.Drawing.Size(741, 350);
+            this.dtgvBill.Size = new System.Drawing.Size(741, 358);
             this.dtgvBill.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.lblFromDate);
             this.panel2.Controls.Add(this.btnViewBill);
             this.panel2.Controls.Add(this.dtpkToDay);
             this.panel2.Controls.Add(this.dtpkFromDay);
             this.panel2.Location = new System.Drawing.Point(8, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(745, 46);
+            this.panel2.Size = new System.Drawing.Size(745, 88);
             this.panel2.TabIndex = 2;
             // 
             // btnViewBill
             // 
             this.btnViewBill.BackColor = System.Drawing.Color.Transparent;
             this.btnViewBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewBill.Location = new System.Drawing.Point(326, 2);
+            this.btnViewBill.Location = new System.Drawing.Point(619, 3);
             this.btnViewBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewBill.Name = "btnViewBill";
-            this.btnViewBill.Size = new System.Drawing.Size(105, 41);
+            this.btnViewBill.Size = new System.Drawing.Size(120, 76);
             this.btnViewBill.TabIndex = 2;
             this.btnViewBill.Text = "Thống kê";
             this.btnViewBill.UseVisualStyleBackColor = false;
@@ -176,21 +180,27 @@
             // 
             // dtpkToDay
             // 
-            this.dtpkToDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkToDay.Location = new System.Drawing.Point(480, 14);
+            this.dtpkToDay.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkToDay.CustomFormat = "dd/MM/yyyy";
+            this.dtpkToDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkToDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpkToDay.Location = new System.Drawing.Point(273, 53);
             this.dtpkToDay.Margin = new System.Windows.Forms.Padding(2);
             this.dtpkToDay.Name = "dtpkToDay";
-            this.dtpkToDay.Size = new System.Drawing.Size(226, 20);
+            this.dtpkToDay.Size = new System.Drawing.Size(226, 26);
             this.dtpkToDay.TabIndex = 1;
             // 
             // dtpkFromDay
             // 
-            this.dtpkFromDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkFromDay.Location = new System.Drawing.Point(44, 14);
+            this.dtpkFromDay.CustomFormat = "dd/MM/yyyy";
+            this.dtpkFromDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkFromDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpkFromDay.Location = new System.Drawing.Point(273, 13);
             this.dtpkFromDay.Margin = new System.Windows.Forms.Padding(2);
             this.dtpkFromDay.Name = "dtpkFromDay";
-            this.dtpkFromDay.Size = new System.Drawing.Size(226, 20);
+            this.dtpkFromDay.Size = new System.Drawing.Size(226, 26);
             this.dtpkFromDay.TabIndex = 0;
+            this.dtpkFromDay.ValueChanged += new System.EventHandler(this.dtpkFromDay_ValueChanged);
             // 
             // tpFood
             // 
@@ -203,7 +213,7 @@
             this.tpFood.Margin = new System.Windows.Forms.Padding(2);
             this.tpFood.Name = "tpFood";
             this.tpFood.Padding = new System.Windows.Forms.Padding(2);
-            this.tpFood.Size = new System.Drawing.Size(759, 410);
+            this.tpFood.Size = new System.Drawing.Size(759, 481);
             this.tpFood.TabIndex = 1;
             this.tpFood.Text = "Thức ăn";
             this.tpFood.UseVisualStyleBackColor = true;
@@ -460,7 +470,7 @@
             this.tpAccount.Margin = new System.Windows.Forms.Padding(2);
             this.tpAccount.Name = "tpAccount";
             this.tpAccount.Padding = new System.Windows.Forms.Padding(2);
-            this.tpAccount.Size = new System.Drawing.Size(759, 410);
+            this.tpAccount.Size = new System.Drawing.Size(759, 481);
             this.tpAccount.TabIndex = 4;
             this.tpAccount.Text = "Tài khoản";
             this.tpAccount.UseVisualStyleBackColor = true;
@@ -645,11 +655,31 @@
             this.btnAddAccount.UseVisualStyleBackColor = false;
             this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
+            // lblFromDate
+            // 
+            this.lblFromDate.AutoSize = true;
+            this.lblFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.90566F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFromDate.Location = new System.Drawing.Point(141, 53);
+            this.lblFromDate.Name = "lblFromDate";
+            this.lblFromDate.Size = new System.Drawing.Size(82, 24);
+            this.lblFromDate.TabIndex = 3;
+            this.lblFromDate.Text = "Ngày ra";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.90566F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(141, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 24);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Ngày vào";
+            // 
             // Fadmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 458);
+            this.ClientSize = new System.Drawing.Size(790, 528);
             this.Controls.Add(this.tcBill);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -664,6 +694,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tpFood.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -745,5 +776,7 @@
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Button btnResetPassword;
         private System.Windows.Forms.NumericUpDown nmUpDownType;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblFromDate;
     }
 }

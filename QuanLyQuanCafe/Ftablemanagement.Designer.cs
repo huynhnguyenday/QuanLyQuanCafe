@@ -52,11 +52,11 @@
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.nmDisCount = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -254,6 +254,7 @@
             // 
             // cbSwitchTable
             // 
+            this.cbSwitchTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSwitchTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSwitchTable.FormattingEnabled = true;
             this.cbSwitchTable.Location = new System.Drawing.Point(186, 17);
@@ -286,6 +287,16 @@
             this.panel4.TabIndex = 5;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.33962F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(43, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 31);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Giảm giá";
+            // 
             // btnAddFood
             // 
             this.btnAddFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -302,9 +313,10 @@
             // 
             // cbFood
             // 
+            this.cbFood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFood.FormattingEnabled = true;
-            this.cbFood.Location = new System.Drawing.Point(169, 449);
+            this.cbFood.Location = new System.Drawing.Point(160, 74);
             this.cbFood.Margin = new System.Windows.Forms.Padding(2);
             this.cbFood.Name = "cbFood";
             this.cbFood.Size = new System.Drawing.Size(201, 30);
@@ -313,6 +325,7 @@
             // 
             // cbCategory
             // 
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(169, 378);
@@ -331,16 +344,6 @@
             this.flpTable.Size = new System.Drawing.Size(430, 313);
             this.flpTable.TabIndex = 6;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.33962F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 31);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Giảm giá";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -356,7 +359,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.30189F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 449);
+            this.label3.Location = new System.Drawing.Point(24, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 29);
             this.label3.TabIndex = 7;
@@ -365,6 +368,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnDeleteFood);
+            this.panel1.Controls.Add(this.cbFood);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnAddFood);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(9, 365);
@@ -391,8 +396,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 580);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cbFood);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.flpTable);
             this.Controls.Add(this.panel4);
@@ -407,7 +410,7 @@
             this.MinimizeBox = false;
             this.Name = "Ftablemanagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý quán Cafe";
+            this.Text = "Phần mềm quản lý quán cafe";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);

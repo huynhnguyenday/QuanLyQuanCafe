@@ -309,7 +309,7 @@ ALTER PROC USP_GetListBillByDate
 @checkIn date, @checkOut date
 AS
 BEGIN
-	SELECT t.name as [Tên bàn], b.totalPrice as [Tổng tiền], datecheckin as [Ngày vào], datecheckout as [Ngày ra], discount as [Giảm giá]
+	SELECT t.name as [Tên bàn], format(b.totalPrice,'#,0#') as [Tổng tiền], datecheckin as [Ngày vào], datecheckout as [Ngày ra], discount as [Giảm giá]
 	FROM dbo.Bill as b, dbo.TableFood as t
 	WHERE datecheckin >= @checkIn AND datecheckout <= @checkOut AND b.status = 1 AND t.id = b.idtable
 END
